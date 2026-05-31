@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 10 — Show What You Know | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10 cur" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh10">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 10 of 10</div>
+    <h1>Show What You Know 🎉</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🧩 All Four CT Pillars</span>
+      <span class="badge">📊 Extended Abstract</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-PPM-01, TE4-DES-01, TE4-MSC-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li><strong>Present</strong> your Lesson 9 project to an audience and explain it using IPO language</li>
+      <li><strong>Evaluate</strong> your project against the design brief</li>
+      <li><strong>Reflect</strong> on your learning journey across all 10 lessons</li>
+      <li><strong>Connect</strong> computational thinking to real-world problems beyond the micro:bit</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Demonstrate your project to at least one other person and explain what each part does</li>
+      <li><span class="cb">☐</span>Write a self-evaluation identifying one strength and one area for improvement</li>
+      <li><span class="cb">☐</span>Complete your final log entry reflecting on the whole course</li>
+      <li><span class="cb">☐</span>Name at least two computational thinking skills you will use again outside this class</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Evaluate</div><div class="def">Judging how well something worked and why</div></div>
+      <div class="vocab-card"><div class="term">Reflection</div><div class="def">Looking back at your learning to understand what you now know</div></div>
+      <div class="vocab-card"><div class="term">Transferable skill</div><div class="def">Something you learned in one area that also helps in others</div></div>
+      <div class="vocab-card"><div class="term">Iteration</div><div class="def">Making improvements based on feedback</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — How Far Have You Come?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher reads back the learning intention from Lesson 1:</p>
+      <div class="quote"><em>"By the end of Lesson 1, you will be able to explain what computational thinking means in your own words."</em></div>
+      <p>Then asks: <em>"Who could do that before this course started? Who can do it now?"</em></p>
+      <div class="quote"><em>"In 10 lessons, you've gone from not knowing what a variable is to building your own working programs. That's a huge jump. Today is about celebrating that — and understanding what you actually learned."</em></div>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — The Full SOLO Journey</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Where You Started vs Where You Are Now</h3>
+      <table class="ui celled striped table">
+        <thead><tr><th>SOLO Level</th><th>What it looks like</th><th>When you were here</th></tr></thead>
+        <tbody>
+          <tr><td>Pre-structural</td><td>"I don't know what computational thinking is"</td><td>Before Lesson 1</td></tr>
+          <tr><td>Uni-structural</td><td>"I can write a program that scrolls text"</td><td>Lessons 1–2</td></tr>
+          <tr><td>Multi-structural</td><td>"I can use buttons AND loops AND variables"</td><td>Lessons 3–5</td></tr>
+          <tr><td>Relational</td><td>"I can combine sensors, variables and decisions in one system"</td><td>Lessons 6–7</td></tr>
+          <tr><td><strong>Extended Abstract</strong></td><td>"I can design, build and debug any program to solve a new problem"</td><td><strong>Lessons 8–10</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="tip">You are now at <strong>Extended Abstract</strong> — you don't just know facts about coding. You can USE those skills to solve NEW problems you haven't seen before.</div>
+
+      <h3>The Four CT Pillars — Where They Appeared</h3>
+      <table class="ui celled table">
+        <thead><tr><th>Pillar</th><th>Where you used it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Decomposition</strong></td><td>Planning the game (Lesson 7), planning your own project (Lesson 9)</td></tr>
+          <tr><td><strong>Pattern Recognition</strong></td><td>Spotting that <code>if/else</code> always follows the same pattern; recognising when a loop is needed</td></tr>
+          <tr><td><strong>Abstraction</strong></td><td>Using variables to store sensor data; ignoring unimportant details</td></tr>
+          <tr><td><strong>Algorithm Design</strong></td><td>Writing step-by-step programs in every lesson</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Where These Skills Go Next</h3>
+      <p>Computational thinking is not just for coding. You use it when you:</p>
+      <ul>
+        <li><strong>Plan a project</strong> — break it into tasks (decomposition)</li>
+        <li><strong>Follow a recipe</strong> — a sequence of steps (algorithm)</li>
+        <li><strong>Budget money</strong> — use variables to track amounts</li>
+        <li><strong>Troubleshoot anything</strong> — the 5-step debug process works everywhere</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SHOWCASE -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">🌟</span><span>SHOWCASE — Present Your Project</span><span class="ls-time">15 minutes</span></div>
+    <div class="ls-body">
+      <p>You will present your Lesson 9 project to a partner, small group, or the whole class. This is NOT a formal performance — it's a conversation.</p>
+
+      <h3>What to Cover (3–4 minutes per person)</h3>
+      <ol style="line-height:2.2;">
+        <li><strong>What does your project do?</strong> — Describe it in plain English.</li>
+        <li><strong>Demo it</strong> — Run the program in the simulator or on the real device.</li>
+        <li><strong>Explain the IPO</strong> — What is the input? What processing does it do? What is the output?</li>
+        <li><strong>Which concepts did you use?</strong> — Point to a part of your code and explain what concept it uses.</li>
+        <li><strong>What would you improve?</strong> — If you had one more lesson, what would you add or change?</li>
+      </ol>
+
+      <h3>Listening Partner Guide</h3>
+      <p>While your partner presents, you must:</p>
+      <ul>
+        <li>Ask at least ONE question</li>
+        <li>Give one piece of <strong>positive feedback</strong> (something that worked well)</li>
+        <li>Give one <strong>suggestion</strong> (one idea for improvement)</li>
+      </ul>
+      <div class="tip">
+        <strong>Use these sentence starters:</strong>
+        <ul style="margin-top:0.5em;">
+          <li>"I noticed that your program… which shows you understand…"</li>
+          <li>"One thing I wondered was…"</li>
+          <li>"If I were going to improve it, I might…"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVALUATION -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">📊</span><span>EVALUATION — How Well Did It Go?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>After your presentation, complete this self-evaluation in your log:</p>
+      <h3>Self-Evaluation Rubric</h3>
+      <p>Rate yourself honestly from 1 (not yet) to 4 (confident):</p>
+      <table class="ui celled striped table">
+        <thead><tr><th>Skill</th><th>My rating (1–4)</th><th>Evidence</th></tr></thead>
+        <tbody>
+          <tr><td>I can explain the IPO model</td><td></td><td></td></tr>
+          <tr><td>I can write a sequence of code</td><td></td><td></td></tr>
+          <tr><td>I can use if/elif/else</td><td></td><td></td></tr>
+          <tr><td>I can write a for loop</td><td></td><td></td></tr>
+          <tr><td>I can write a while loop</td><td></td><td></td></tr>
+          <tr><td>I can use variables</td><td></td><td></td></tr>
+          <tr><td>I can read sensor data</td><td></td><td></td></tr>
+          <tr><td>I can debug a broken program</td><td></td><td></td></tr>
+          <tr><td>I can design a program before coding it</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- FINAL PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>FINAL PROGRESS LOG — Lesson 10</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p>This is your <strong>final log entry</strong> for the course. Spend more time on this one.</p>
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 10 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">Looking back at my learning…</span>
+          <span class="lp-hint">Look back through your log entries from Lessons 1–9. Choose ONE entry and explain how your thinking has changed since then. What do you know now that you didn't know when you wrote that entry?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">My best moment in this course was…</span>
+          <span class="lp-hint">Describe one moment — a breakthrough, a bug you fixed, something that surprised you — that you remember clearly.</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">The concept I found hardest was…</span>
+          <span class="lp-hint">Be honest. What gave you the most trouble? Why do you think it was hard for you?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I will use computational thinking again when…</span>
+          <span class="lp-hint">Name TWO situations outside of coding — in school, in sport, in a hobby, in a job — where you might use decomposition, algorithms, pattern recognition, or abstraction.</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">One question I still have is…</span>
+          <span class="lp-hint">What do you want to learn next? Where would you like to take this?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box" style="background:linear-gradient(135deg,#f0f0ff,#fff8ff);border-color:#5F00C7;">
+    <h2 style="color:#5F00C7;">🎉 Course Complete — Lesson Summary</h2>
+    <p style="font-weight:700;color:#444;margin-bottom:0.8em;">Over 10 lessons, you:</p>
+    <ul class="sum-list">
+      <li>Learned the <strong>Input → Process → Output</strong> model</li>
+      <li>Wrote Python programs using <strong>sequence, selection, and loops</strong></li>
+      <li>Used <strong>variables</strong> to store and update data</li>
+      <li>Read real <strong>sensor data</strong> from the micro:bit</li>
+      <li>Combined everything into a <strong>working game</strong></li>
+      <li><strong>Debugged</strong> broken code using a systematic process</li>
+      <li><strong>Designed and built</strong> your own original project</li>
+      <li>Reflected on your learning and presented your work</li>
+    </ul>
+    <p style="margin-top:1em;font-weight:800;color:#5F00C7;font-size:1.05em;">You now know how to <em>think like a computer</em> — and how to make a computer think like you want it to.</p>
+  </div>
+
+  <div style="background:#fff;border-radius:16px;padding:1.5em;margin:1.5em 0;border:2px solid #ddd;">
+    <h3 style="font-weight:900;color:#333;margin-top:0;">What's Next?</h3>
+    <p>If you want to keep going:</p>
+    <ul>
+      <li>Try <strong>micro:bit + MakeCode</strong> for block-based programming and radio communication</li>
+      <li>Explore <strong>Python</strong> further at <a href="https://python.org" target="_blank">python.org</a> or <a href="https://code.org" target="_blank">code.org</a></li>
+      <li>Look into the <strong>Computing Technology</strong> elective in Year 9–10</li>
+      <li>Search for "micro:bit project ideas" for hundreds more things to build</li>
+    </ul>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-09.html" class="ui labeled icon button" style="background:#B03900;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 9: Design Your Own
+    </a>
+    <a href="../index.html" class="ui right labeled icon button" style="background:#5F00C7;color:#fff;font-weight:800;">
+      Back to Home <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 10 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02 | Course complete.
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

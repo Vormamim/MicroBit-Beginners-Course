@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9 — Design Your Own | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9 cur" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh9">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 9 of 10</div>
+    <h1>Design Your Own ✏️</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🧩 All Four CT Pillars</span>
+      <span class="badge">📊 Extended Abstract</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-PPM-01, TE4-DES-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Use the <strong>design process</strong> (plan → code → test → improve) independently</li>
+      <li>Choose and justify which sensors and concepts to use for your own project</li>
+      <li>Write, test, and debug a complete original program</li>
+      <li>Evaluate your program against your original design</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Complete a written plan BEFORE starting to code</li>
+      <li><span class="cb">☐</span>Build a working program that does what your plan says</li>
+      <li><span class="cb">☐</span>Identify one thing that worked and one thing you would improve</li>
+      <li><span class="cb">☐</span>Explain your project using the IPO model</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Design brief</div><div class="def">A short description of the problem you're trying to solve</div></div>
+      <div class="vocab-card"><div class="term">Prototype</div><div class="def">An early, working version of your solution — not perfect, but functional</div></div>
+      <div class="vocab-card"><div class="term">Evaluate</div><div class="def">Check your solution against your original plan</div></div>
+      <div class="vocab-card"><div class="term">Iterate</div><div class="def">Improve by making small changes and testing each one</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — Technology Solves Problems</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher shows images of three everyday devices:</p>
+      <ul>
+        <li>A smoke alarm</li>
+        <li>A pedometer (step counter)</li>
+        <li>A parking sensor in a car</li>
+      </ul>
+      <div class="quote"><em>"Each of these started with someone noticing a PROBLEM and thinking: could a small computer help solve this? Today, you're that person. What problem can your micro:bit help solve?"</em></div>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — The Design Process</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>The 4-Step Design Process</h3>
+      <p>Good programmers don't just start typing. They follow a process:</p>
+
+      <div class="ipo-row" style="flex-wrap:nowrap;">
+        <div class="ipo-box" style="background:#e3f2fd;border:2px solid #1976D2;text-align:center;">
+          <span style="font-weight:900;color:#1976D2;display:block;font-size:0.8em;text-transform:uppercase;letter-spacing:1px;">1. PLAN</span>
+          <span style="font-size:0.88em;color:#444;">What will it do? Draw IPO</span>
+        </div>
+        <div class="ipo-box" style="background:#f3e5f5;border:2px solid #7B1FA2;text-align:center;">
+          <span style="font-weight:900;color:#7B1FA2;display:block;font-size:0.8em;text-transform:uppercase;letter-spacing:1px;">2. CODE</span>
+          <span style="font-size:0.88em;color:#444;">Write your program</span>
+        </div>
+        <div class="ipo-box" style="background:#e8f5e9;border:2px solid #388E3C;text-align:center;">
+          <span style="font-weight:900;color:#388E3C;display:block;font-size:0.8em;text-transform:uppercase;letter-spacing:1px;">3. TEST</span>
+          <span style="font-size:0.88em;color:#444;">Does it do what you planned?</span>
+        </div>
+        <div class="ipo-box" style="background:#fff8e1;border:2px solid #F9A825;text-align:center;">
+          <span style="font-weight:900;color:#E65100;display:block;font-size:0.8em;text-transform:uppercase;letter-spacing:1px;">4. IMPROVE</span>
+          <span style="font-size:0.88em;color:#444;">Fix bugs, add features → back to step 3</span>
+        </div>
+      </div>
+
+      <div class="tip">This process <strong>loops</strong>. You go from Test back to Improve many times before a program is finished. That's normal — it's not a sign you're doing it wrong.</div>
+
+      <h3>The Design Plan Template</h3>
+      <p>Before you write any code, complete this planning template:</p>
+
+      <div class="log-card" style="border-color:#B03900;">
+        <strong style="font-size:1.05em;color:#B03900;">My Project Plan</strong>
+
+        <div class="log-prompt">
+          <span class="lp-label" style="color:#B03900;">Project name:</span>
+          <span class="lp-hint">_________________________________</span>
+        </div>
+
+        <div class="log-prompt">
+          <span class="lp-label" style="color:#B03900;">The problem I am solving:</span>
+          <span class="lp-hint">In one sentence, what will your program do?</span>
+        </div>
+
+        <div class="log-prompt">
+          <span class="lp-label" style="color:#B03900;">IPO Plan:</span>
+        </div>
+        <table class="ui celled table" style="margin-top:0.3em;">
+          <thead><tr><th>Input</th><th>Processing</th><th>Output</th></tr></thead>
+          <tbody>
+            <tr><td style="height:2em;"></td><td></td><td></td></tr>
+            <tr><td style="height:2em;"></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+
+        <div class="log-prompt">
+          <span class="lp-label" style="color:#B03900;">Concepts I will use:</span>
+          <span class="lp-hint">☐ Sequence &nbsp; ☐ Selection (if/elif/else) &nbsp; ☐ Loops (for/while) &nbsp; ☐ Variables &nbsp; ☐ Sensors &nbsp; ☐ Random numbers</span>
+        </div>
+
+        <div class="log-prompt">
+          <span class="lp-label" style="color:#B03900;">Hardware I will use:</span>
+          <span class="lp-hint">☐ Button A &nbsp; ☐ Button B &nbsp; ☐ LED Display &nbsp; ☐ Accelerometer &nbsp; ☐ Temperature sensor &nbsp; ☐ Light sensor &nbsp; ☐ 🔊 Microphone (V2 only)</span>
+        </div>
+      </div>
+
+      <h3>Project Ideas (if you need inspiration)</h3>
+      <table class="ui celled striped table">
+        <thead><tr><th>Project</th><th>Description</th><th>Sensors used</th></tr></thead>
+        <tbody>
+          <tr><td>Coin flipper</td><td>Press A to flip a virtual coin — heads or tails</td><td>Buttons</td></tr>
+          <tr><td>Step counter</td><td>Count shakes as steps; press B to display</td><td>Accelerometer</td></tr>
+          <tr><td>Digital dice</td><td>Shake to roll 1–6</td><td>Accelerometer, random</td></tr>
+          <tr><td>Compass display</td><td>Point in a direction, see N/S/E/W</td><td>Compass</td></tr>
+          <tr><td>Mood tracker</td><td>Press A/B throughout the day to log mood</td><td>Buttons, variables</td></tr>
+          <tr><td>Thermometer</td><td>Shows temperature with a visual indicator</td><td>Temperature sensor</td></tr>
+          <tr><td>Secret message</td><td>Shake to decode a hidden message</td><td>Accelerometer</td></tr>
+          <tr><td>Night light alert</td><td>Warns if room gets too dark</td><td>Light sensor</td></tr>
+          <tr><td>Mini quiz</td><td>Ask a question, A = True, B = False</td><td>Buttons</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Plan, Build, Test</span><span class="ls-time">25 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher will walk around and help while you work through the design process.</p>
+
+      <div class="task">
+        <div class="task-title">Step 1: Plan (5 minutes)</div>
+        <p>Complete the Design Plan Template above in your notebook or log.</p>
+        <div class="warn"><strong>Do not skip this step.</strong> If you start coding without a plan, your teacher will ask you to go back.</div>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Step 2: Code (15 minutes)</div>
+        <p>Open <a href="https://python.microbit.org/v/3" target="_blank">python.microbit.org/v/3</a> and build your program.</p>
+        <p><strong>Tips as you code:</strong></p>
+        <ul>
+          <li>Start with a simple version that does the basics — get that working first</li>
+          <li>Add one feature at a time</li>
+          <li>If something breaks, use the 5-step debug process from Lesson 8</li>
+          <li>Use <code>print()</code> to check what your variables are doing</li>
+        </ul>
+        <p><strong>Code starter — copy this structure:</strong></p>
+        <pre><code class="language-python">from microbit import *
+
+# --- Your variables here ---
+
+
+# --- Your setup code here (things that run once) ---
+display.scroll("My Project")
+
+# --- Your main loop ---
+while True:
+    # --- Your main code here ---
+    pass  # Delete this line when you add your own code</code></pre>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Step 3: Test (5 minutes)</div>
+        <p>When your program runs, test it properly:</p>
+        <ul>
+          <li>Does it do what your plan said it would?</li>
+          <li>What happens if you press buttons in an unexpected order?</li>
+          <li>Does it handle edge cases? (e.g. what if no button is pressed for 10 seconds?)</li>
+        </ul>
+        <p>Write your test results in your log.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 9</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 9 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">What is the 4-step design process? Why is it important to plan before coding?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Describe your project. What was your plan? Did the program do what you planned? Paste or write your code if you can.</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">What would you add to your project if you had more time? What new feature would make it better?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li>The <strong>design process</strong>: Plan → Code → Test → Improve (and repeat)</li>
+      <li>A <strong>design plan</strong> with an IPO diagram saves time and reduces bugs</li>
+      <li>Starting <strong>simple</strong> then adding features one at a time works better than trying to build everything at once</li>
+      <li>Testing against your <strong>original plan</strong> tells you if you succeeded</li>
+    </ul>
+    <p class="next-teaser">Next lesson is your final showcase — you'll present and reflect on your learning across the whole course! 🎉</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-08.html" class="ui labeled icon button" style="background:#C40057;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 8: Fixing What's Broken
+    </a>
+    <a href="lesson-10.html" class="ui right labeled icon button" style="background:#5F00C7;color:#fff;font-weight:800;">
+      Lesson 10: Show What You Know <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 9 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

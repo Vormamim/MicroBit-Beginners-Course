@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8 — Fixing What's Broken | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8 cur" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh8">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 8 of 10</div>
+    <h1>Fixing What's Broken 🐛</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🎭 Abstraction</span>
+      <span class="badge">📊 Extended Abstract</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-DES-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Distinguish between <strong>syntax errors</strong> and <strong>logic errors</strong></li>
+      <li>Use a systematic process to <strong>debug</strong> a broken program</li>
+      <li>Read Python error messages and understand what they mean</li>
+      <li>Apply debugging skills to code you didn't write yourself</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Fix three broken programs provided in this lesson</li>
+      <li><span class="cb">☐</span>Explain the difference between a syntax error and a logic error</li>
+      <li><span class="cb">☐</span>Describe the debugging process you used</li>
+      <li><span class="cb">☐</span>Write a program with an intentional bug, then swap with a partner to fix</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Bug</div><div class="def">A mistake in code that causes unexpected behaviour</div></div>
+      <div class="vocab-card"><div class="term">Debugging</div><div class="def">The process of finding and fixing bugs</div></div>
+      <div class="vocab-card"><div class="term">Syntax error</div><div class="def">Code that doesn't follow Python's grammar rules</div></div>
+      <div class="vocab-card"><div class="term">Logic error</div><div class="def">Code that runs without crashing but does the wrong thing</div></div>
+      <div class="vocab-card"><div class="term"><code>print()</code></div><div class="def">Displays a value in the console — useful for checking variables</div></div>
+      <div class="vocab-card"><div class="term">Trace</div><div class="def">Following a program's execution line by line in your head</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — Find the Bug in This Recipe</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher displays this "recipe" for making toast:</p>
+      <ol>
+        <li>Put bread in the toaster</li>
+        <li>Eat the toast</li>
+        <li>Push the lever down</li>
+        <li>Wait for the toast to pop up</li>
+        <li>Butter the toast</li>
+      </ol>
+      <div class="quote"><em>"What's wrong? Steps 2 and 3 are in the wrong order — that's a logic error. The steps are all valid actions, but the ORDER is wrong. This is different from writing nonsense (a syntax error)."</em></div>
+      <p>Both types of error happen in code. Today you learn to find both.</p>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Two Types of Bugs</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Type 1: Syntax Errors — the code is written incorrectly</h3>
+      <p>Python tells you straight away. The program won't run at all.</p>
+      <pre><code class="language-python"># BROKEN:
+from microbit import *
+display.scroll("Hello"       # Missing closing bracket
+
+# ERROR: SyntaxError: '(' was never closed</code></pre>
+      <p>Common syntax errors:</p>
+      <ul>
+        <li>Missing brackets <code>(</code> <code>)</code> or quotes <code>"</code> <code>"</code></li>
+        <li>Wrong capitalisation (<code>Display</code> instead of <code>display</code>)</li>
+        <li>Missing colon after <code>if</code>, <code>while</code>, <code>for</code></li>
+        <li>Wrong indentation (inconsistent spaces)</li>
+      </ul>
+
+      <h3>Type 2: Logic Errors — the code runs but does the wrong thing</h3>
+      <p>Python doesn't tell you — YOU have to notice.</p>
+      <pre><code class="language-python"># This runs fine but counts backwards when it should count up:
+from microbit import *
+for i in range(5, 0, -1):    # This counts DOWN, not up
+    display.show(str(i))
+    sleep(500)</code></pre>
+      <p>Logic errors are trickier because you need to understand what the code SHOULD do and compare it to what it ACTUALLY does.</p>
+
+      <h3>The Debugging Process</h3>
+      <div class="tip">
+        <strong>5-Step Debugging Process — use this every time something doesn't work:</strong>
+        <ol style="margin-top:0.7em;line-height:2.1;">
+          <li><strong>READ</strong> the error message (if there is one) — What line? What type of error?</li>
+          <li><strong>LOOK</strong> at the relevant code carefully — Is there a typo? Missing bracket? Wrong indentation?</li>
+          <li><strong>TRACE</strong> the code in your head — What does each line do? What values do variables hold?</li>
+          <li><strong>CHANGE</strong> one thing at a time — Don't change everything at once — you won't know what fixed it</li>
+          <li><strong>TEST</strong> after each change — Does it work now? If not, go back to step 1</li>
+        </ol>
+      </div>
+
+      <h3>Adding Debug Output</h3>
+      <p>You can add <code>print()</code> statements to see what your variables are doing:</p>
+      <pre><code class="language-python">from microbit import *
+
+score = 0
+while True:
+    if button_a.is_pressed():
+        score = score + 1
+        print("Score is now:", score)   # Shows in the Python Editor console
+        display.show(str(score))</code></pre>
+      <p>The <code>print()</code> output appears in the bottom panel of the Python Editor.</p>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Debugging Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher shows a broken program on the screen. Watch them use the 5-step debugging process out loud, finding each error one by one.</p>
+      <pre><code class="language-python">from microbit Import *
+
+score = 0
+while true:
+    if button_a.is_pressed()
+        score = score + 1
+        display.show(str(score)
+    elif button_b.is_pressed():
+        display.scroll("Score: " + score)</code></pre>
+
+      <div class="warn">
+        <strong>Bugs in this program:</strong>
+        <ol style="margin-top:0.5em;">
+          <li><code>Import</code> should be <code>import</code> (capital I — syntax error)</li>
+          <li><code>true</code> should be <code>True</code> (capital T — syntax error)</li>
+          <li>Missing colon after <code>if button_a.is_pressed()</code> (syntax error)</li>
+          <li>Missing closing bracket in <code>display.show(str(score)</code> (syntax error)</li>
+          <li><code>"Score: " + score</code> — can't add string + integer (logic/type error — need <code>str(score)</code>)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Debug These Programs</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+
+      <div class="task">
+        <div class="task-title">Task 1: Fix the Syntax Errors</div>
+        <p>Copy each broken program into the editor. Find and fix all the errors.</p>
+
+        <p><strong>Broken Program A:</strong></p>
+        <pre><code class="language-python">from microbit import *
+
+while True
+    if button_a.is_pressed():
+        display.Show(Image.HAPPY)
+    else
+        display.show(image.SAD)</code></pre>
+
+        <p><strong>Broken Program B:</strong></p>
+        <pre><code class="language-python">from microbit import *
+
+for i in range(1 6):
+    display.scroll(i)
+    sleep(500</code></pre>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Fix the Logic Errors</div>
+        <p>These programs run without crashing — but they do the wrong thing. Figure out what they SHOULD do, then fix them.</p>
+
+        <p><strong>Broken Program C</strong> — should count UP from 0 to 9, but it doesn't:</p>
+        <pre><code class="language-python">from microbit import *
+
+for i in range(9, -1, -1):
+    display.show(str(i))
+    sleep(500)</code></pre>
+
+        <p><strong>Broken Program D</strong> — should show HAPPY when warm (&gt;22°C) and SAD when cold, but it's backwards:</p>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    temp = temperature()
+    if temp &lt; 22:
+        display.show(Image.HAPPY)
+    else:
+        display.show(Image.SAD)
+    sleep(2000)</code></pre>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Write a Bug for Your Partner</div>
+        <ol>
+          <li>Write a working program (any topic from this course)</li>
+          <li>Introduce exactly <strong>TWO deliberate bugs</strong> — one syntax, one logic</li>
+          <li>Swap with a partner</li>
+          <li>Fix each other's bugs</li>
+          <li>Explain to each other what bugs you found and how you fixed them</li>
+        </ol>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Trace Before You Run</strong><br><br>
+        Before running Broken Program B above, <strong>trace it on paper</strong>:
+        <ul style="margin-top:0.5em;">
+          <li>What do you think <code>range(1 6)</code> was trying to do?</li>
+          <li>Write out what each iteration of the loop would do IF it ran</li>
+          <li>Then fix it and verify your prediction was correct</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 8</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 8 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Explain the difference between a syntax error and a logic error. Which do you find harder to fix, and why?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Which broken programs did you fix? What bugs did your partner put in their code? What bugs did you find?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">Professional programmers spend a lot of time debugging. Why do you think it's impossible to write perfect code the first time?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li><strong>Syntax errors</strong> stop the program running — Python tells you where</li>
+      <li><strong>Logic errors</strong> let the program run but it does the wrong thing</li>
+      <li>The <strong>5-step debugging process</strong> helps you find any bug systematically</li>
+      <li><code>print()</code> is your best friend for watching variables during debugging</li>
+      <li>Changing <strong>one thing at a time</strong> is essential when fixing bugs</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll design and build your own project from scratch! ✏️</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-07.html" class="ui labeled icon button" style="background:#1A6ED8;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 7: Build a Mini-Game
+    </a>
+    <a href="lesson-09.html" class="ui right labeled icon button" style="background:#B03900;color:#fff;font-weight:800;">
+      Lesson 9: Design Your Own <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 8 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

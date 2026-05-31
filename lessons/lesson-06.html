@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 6 — Sensing the World | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6 cur" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh6">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 6 of 10</div>
+    <h1>Sensing the World 🌡️</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🧩 Decomposition</span>
+      <span class="badge">📊 Relational</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-MSC-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Name and describe at least four sensors on the micro:bit</li>
+      <li>Write programs that use sensor data as <strong>input</strong></li>
+      <li>Store sensor readings in <strong>variables</strong> and use them in <strong>decisions</strong></li>
+      <li>Design a complete IPO system using a real sensor</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Write a program using the accelerometer to detect a shake gesture</li>
+      <li><span class="cb">☐</span>Write a program that reacts to light levels</li>
+      <li><span class="cb">☐</span>Draw a full IPO diagram for a sensor-based program</li>
+      <li><span class="cb">☐</span>Explain the difference between a sensor that gives a number and one that gives True/False</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Sensor</div><div class="def">A component that detects information from the physical world</div></div>
+      <div class="vocab-card"><div class="term">Accelerometer</div><div class="def">Measures movement and tilt in 3 directions (X, Y, Z)</div></div>
+      <div class="vocab-card"><div class="term">Gesture</div><div class="def">A recognised movement — like "shake", "tilt_left", "face_up"</div></div>
+      <div class="vocab-card"><div class="term"><code>accelerometer.get_x()</code></div><div class="def">Returns the tilt left/right as a number (-1023 to 1023)</div></div>
+      <div class="vocab-card"><div class="term"><code>accelerometer.was_gesture()</code></div><div class="def">Returns True if a gesture happened since last checked</div></div>
+      <div class="vocab-card"><div class="term"><code>display.read_light_level()</code></div><div class="def">Returns current light level (0 = dark, 255 = bright)</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — What Can Your Body Detect?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher asks: <em>"Without using your eyes, what can your body sense right now?"</em></p>
+      <p>Students might say: temperature, touch, sound, balance (are you standing straight?), pressure.</p>
+      <div class="quote"><em>"Your micro:bit has sensors too — it can feel temperature, light, movement, tilt, magnetic field, and (if V2) sound. Today you'll learn to read those sensors and use them as inputs."</em></div>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Sensors on the micro:bit</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Overview of Built-in Sensors</h3>
+      <table class="ui celled striped table">
+        <thead><tr><th>Sensor</th><th>Function to call</th><th>Returns</th><th>Example use</th></tr></thead>
+        <tbody>
+          <tr><td>Accelerometer (movement)</td><td><code>accelerometer.get_x()</code></td><td>Number (-1023 to 1023)</td><td>Detect tilt left/right</td></tr>
+          <tr><td>Accelerometer (gesture)</td><td><code>accelerometer.was_gesture("shake")</code></td><td>True / False</td><td>Detect shaking</td></tr>
+          <tr><td>Temperature</td><td><code>temperature()</code></td><td>Number (°C)</td><td>Show temperature</td></tr>
+          <tr><td>Light level</td><td><code>display.read_light_level()</code></td><td>Number (0–255)</td><td>React to brightness</td></tr>
+          <tr><td>Compass</td><td><code>compass.heading()</code></td><td>Number (0–360 degrees)</td><td>Show direction</td></tr>
+          <tr><td>🔊 V2 Microphone</td><td><code>microphone.sound_level()</code></td><td>Number (0–255)</td><td>React to noise</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Two Types of Sensor Output</h3>
+      <p><strong>Type 1: A number</strong> — tells you HOW MUCH</p>
+      <pre><code class="language-python">tilt = accelerometer.get_x()         # e.g. -450 (tilted left)
+temp = temperature()                  # e.g. 23 (degrees Celsius)
+light = display.read_light_level()    # e.g. 180 (moderately bright)</code></pre>
+      <p>You use <code>if</code> with comparisons: <code>if tilt &gt; 200:</code> or <code>if temp &lt; 15:</code></p>
+
+      <p><strong>Type 2: True/False</strong> — tells you YES or NO</p>
+      <pre><code class="language-python">shaking = accelerometer.was_gesture("shake")  # True or False
+pressed = button_a.is_pressed()               # True or False</code></pre>
+      <p>You use <code>if</code> directly: <code>if accelerometer.was_gesture("shake"):</code></p>
+
+      <h3>Available Gestures</h3>
+      <table class="ui celled table">
+        <thead><tr><th>Gesture string</th><th>What it detects</th></tr></thead>
+        <tbody>
+          <tr><td><code>"shake"</code></td><td>Device shaken</td></tr>
+          <tr><td><code>"tilt_left"</code></td><td>Left side down</td></tr>
+          <tr><td><code>"tilt_right"</code></td><td>Right side down</td></tr>
+          <tr><td><code>"face_up"</code></td><td>Screen facing up</td></tr>
+          <tr><td><code>"face_down"</code></td><td>Screen facing down</td></tr>
+          <tr><td><code>"freefall"</code></td><td>Dropped (use carefully!)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p><strong>Goal:</strong> Build a "spirit level" — the micro:bit shows an arrow pointing in the direction it's tilting.</p>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    x = accelerometer.get_x()
+
+    if x &gt; 300:
+        display.show(Image.ARROW_E)    # Tilting right
+    elif x &lt; -300:
+        display.show(Image.ARROW_W)    # Tilting left
+    else:
+        display.show(Image.DIAMOND)    # Roughly level
+
+    sleep(100)</code></pre>
+
+      <h3>IPO Breakdown</h3>
+      <div class="ipo-row">
+        <div class="ipo-box ipo-in"><span class="ipo-lbl">INPUT</span><span class="ipo-val">Tilt (accelerometer.get_x())</span></div>
+        <div class="ipo-box ipo-proc"><span class="ipo-lbl">PROCESSING</span><span class="ipo-val">Compare x value to 300 and -300</span></div>
+        <div class="ipo-box ipo-out"><span class="ipo-lbl">OUTPUT</span><span class="ipo-val">Arrow pointing left, right, or diamond for level</span></div>
+      </div>
+
+      <h3>Key things to notice</h3>
+      <ul>
+        <li><code>x = accelerometer.get_x()</code> — stores sensor reading in a variable</li>
+        <li>The comparison numbers (300, -300) are <strong>thresholds</strong> — values where we decide to do something different</li>
+        <li><code>sleep(100)</code> — only 0.1 seconds, so the display updates quickly</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Sense and Respond</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+
+      <div class="task">
+        <div class="task-title">Task 1: Shake Detector (everyone)</div>
+        <pre><code class="language-python">from microbit import *
+
+display.show(Image.ASLEEP)
+
+while True:
+    if accelerometer.was_gesture("shake"):
+        display.show(Image.SURPRISED)
+        sleep(1000)
+        display.show(Image.ASLEEP)</code></pre>
+        <p>Test in the simulator by clicking the shake button. What is the:</p>
+        <ul>
+          <li><strong>Input?</strong></li>
+          <li><strong>Processing?</strong></li>
+          <li><strong>Output?</strong></li>
+        </ul>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Light Detector</div>
+        <p>Write a program that reacts to light levels:</p>
+        <ul>
+          <li>If light level &gt; 100: show the SUN image or scroll "Bright"</li>
+          <li>If light level ≤ 100: show Image.ASLEEP or scroll "Dark"</li>
+        </ul>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    light = display.read_light_level()
+
+    if light &gt; 100:
+        display.scroll("Bright: " + str(light))
+    else:
+        display.scroll("Dark: " + str(light))
+
+    sleep(2000)</code></pre>
+        <p>Try covering the simulator's light sensor (or your real micro:bit's display) with your hand. Does it change?</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Design Your Own Sensor Program</div>
+        <p>Choose ONE sensor from the table above. Design a program that:</p>
+        <ol>
+          <li>Reads the sensor</li>
+          <li>Stores the value in a variable</li>
+          <li>Makes a decision based on that value</li>
+          <li>Shows an appropriate output</li>
+        </ol>
+        <p><strong>Plan it first:</strong> Draw the IPO diagram in your notebook BEFORE you code it.</p>
+        <ul>
+          <li>What is your <strong>input</strong>? (which sensor?)</li>
+          <li>What <strong>processing</strong> will you do? (what decision?)</li>
+          <li>What is your <strong>output</strong>? (what will the display show?)</li>
+        </ul>
+      </div>
+
+      <div class="ext">
+        <strong>🔊 V2 Extension: Sound Level Meter</strong>
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+
+while True:
+    level = microphone.sound_level()
+
+    if level &gt; 200:
+        display.scroll("LOUD! " + str(level))
+    elif level &gt; 100:
+        display.scroll("Medium")
+    else:
+        display.show(Image.ASLEEP)
+
+    sleep(500)</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 6</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 6 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Name two sensors on the micro:bit. For each one: does it return a number or True/False?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Describe your Task 3 program. What sensor did you pick? Draw or write out your IPO plan.</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">Could you combine two sensors? What real device uses multiple sensors at once? Think of your phone as an example.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li>The micro:bit has multiple <strong>sensors</strong> that provide input data</li>
+      <li>Some sensors return a <strong>number</strong> (temperature, light level, tilt)</li>
+      <li>Some sensors return <strong>True/False</strong> (gestures, button presses)</li>
+      <li>Store sensor readings in <strong>variables</strong> before using them</li>
+      <li>Use <strong>thresholds</strong> (comparison values) to make decisions with sensor numbers</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll combine EVERYTHING you've learned into a mini-game! 🎮</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-05.html" class="ui labeled icon button" style="background:#C42B4B;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 5: Talking to the World
+    </a>
+    <a href="lesson-07.html" class="ui right labeled icon button" style="background:#1A6ED8;color:#fff;font-weight:800;">
+      Lesson 7: Build a Mini-Game <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 6 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

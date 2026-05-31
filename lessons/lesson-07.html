@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 7 — Build a Mini-Game | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7 cur" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh7">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 7 of 10</div>
+    <h1>Build a Mini-Game 🎮</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🧩 All Four CT Pillars</span>
+      <span class="badge">📊 Relational</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-PPM-01, TE4-DES-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Use <strong>decomposition</strong> to plan a game by breaking it into smaller parts</li>
+      <li>Combine sequence, selection, loops, variables, and sensors in one program</li>
+      <li>Test your program and identify at least one thing you would improve</li>
+      <li>Explain your program's IPO to a partner</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Complete a working version of the Reaction Timer game (or your own variant)</li>
+      <li><span class="cb">☐</span>Describe how each concept from Lessons 1–6 appears in your program</li>
+      <li><span class="cb">☐</span>Name one bug you found and how you fixed it</li>
+      <li><span class="cb">☐</span>Explain your game to someone else using IPO language</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Decomposition</div><div class="def">Breaking a big problem into smaller, manageable parts</div></div>
+      <div class="vocab-card"><div class="term"><code>import random</code></div><div class="def">Loads Python's random number tools</div></div>
+      <div class="vocab-card"><div class="term"><code>random.randint(a, b)</code></div><div class="def">Gives a random whole number between a and b (inclusive)</div></div>
+      <div class="vocab-card"><div class="term">Testing</div><div class="def">Running your program and checking if it does what you intended</div></div>
+      <div class="vocab-card"><div class="term">Bug</div><div class="def">A mistake in code that causes it to behave unexpectedly</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — What Makes a Good Game?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Your teacher asks: <em>"Think of a simple game on a phone or console. What does it need to work?"</em></p>
+      <p>Students brainstorm and usually land on:</p>
+      <ul>
+        <li>A <strong>start</strong> state</li>
+        <li>Something that <strong>challenges</strong> the player</li>
+        <li>A way to <strong>score</strong> or win/lose</li>
+        <li>Some <strong>randomness</strong> so it's not always the same</li>
+        <li>A way to <strong>reset</strong> and play again</li>
+      </ul>
+      <div class="quote"><em>"Today you'll build a micro:bit game that has ALL of these things — using code you already know."</em></div>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Decomposition and Random Numbers</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Decomposition: Planning Before Coding</h3>
+      <p>Before you write a single line, <strong>break the game into parts</strong>.</p>
+      <p><strong>The Reaction Timer Game:</strong> The player waits for a signal to appear on screen. When they see it, they press Button A as fast as possible. The game measures how long they took (in milliseconds). It shows their reaction time and a rating.</p>
+
+      <table class="ui celled striped table">
+        <thead><tr><th>Part</th><th>What it does</th><th>Concepts used</th></tr></thead>
+        <tbody>
+          <tr><td>Wait to start</td><td>Show "Ready?" and wait for A</td><td>sequence, display</td></tr>
+          <tr><td>Random delay</td><td>Wait a random time before showing signal</td><td><code>random</code>, <code>sleep</code></td></tr>
+          <tr><td>Show signal</td><td>Display a smiley/target</td><td>display output</td></tr>
+          <tr><td>Measure time</td><td>Record when signal appeared, check time after button press</td><td>variable, loop</td></tr>
+          <tr><td>Show score</td><td>Display the reaction time</td><td>variable, display</td></tr>
+          <tr><td>Rating</td><td>Classify the time as fast/okay/slow</td><td>selection (if/elif/else)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Random Numbers</h3>
+      <pre><code class="language-python">import random
+
+delay = random.randint(1000, 4000)  # Random number between 1000 and 4000
+sleep(delay)                         # Wait that many milliseconds</code></pre>
+      <p>This makes the game unpredictable — you don't know when the signal will appear!</p>
+
+      <h3>Measuring Time</h3>
+      <pre><code class="language-python">start = running_time()    # Returns milliseconds since micro:bit turned on
+# ... (player reacts here) ...
+end = running_time()
+reaction = end - start    # Difference = reaction time in milliseconds</code></pre>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p>Watch your teacher build the Reaction Timer step by step. Note which concept each section uses.</p>
+      <pre><code class="language-python">from microbit import *
+import random
+
+# --- INTRO ---
+display.scroll("Reaction!")
+display.scroll("Press A when you see :)")
+sleep(1000)
+
+# --- GAME LOOP ---
+while True:
+    # Step 1: Wait for player to be ready
+    display.show(Image.ASLEEP)
+    while not button_a.is_pressed():
+        sleep(100)
+
+    display.clear()
+
+    # Step 2: Random delay (so you can't predict it)
+    delay = random.randint(1000, 4000)
+    sleep(delay)
+
+    # Step 3: Show the signal
+    display.show(Image.HAPPY)
+    start = running_time()    # Start the clock
+
+    # Step 4: Wait for button press
+    while not button_a.is_pressed():
+        sleep(10)
+
+    end = running_time()     # Stop the clock
+
+    # Step 5: Calculate and display result
+    reaction = end - start
+    display.scroll(str(reaction) + "ms")
+
+    # Step 6: Rate the result
+    if reaction &lt; 300:
+        display.scroll("FAST!")
+    elif reaction &lt; 600:
+        display.scroll("Good")
+    else:
+        display.scroll("Slow")
+
+    sleep(2000)</code></pre>
+
+      <h3>IPO Breakdown</h3>
+      <div class="ipo-row">
+        <div class="ipo-box ipo-in"><span class="ipo-lbl">INPUT</span><span class="ipo-val">Button A press (to start, and to react)</span></div>
+        <div class="ipo-box ipo-proc"><span class="ipo-lbl">PROCESSING</span><span class="ipo-val">Random delay, time difference calculation, rating comparison</span></div>
+        <div class="ipo-box ipo-out"><span class="ipo-lbl">OUTPUT</span><span class="ipo-val">Instructions, signal image, reaction time, rating text</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Build Your Game</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+
+      <div class="task">
+        <div class="task-title">Task 1: Type and Test the Reaction Timer (everyone)</div>
+        <p>Type the game above exactly. Test it in the simulator — click the A button when you see the happy face.</p>
+        <p>Fix any errors you encounter. What was the fastest reaction time you got?</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Personalise It</div>
+        <p>Make at least <strong>TWO changes</strong> to the game. Ideas:</p>
+        <ul>
+          <li>Change the signal from <code>Image.HAPPY</code> to something else</li>
+          <li>Add a different message for very slow reactions (&gt; 1000ms)</li>
+          <li>Change the random delay range to make it harder</li>
+          <li>Add a "best score" tracker using a second variable</li>
+          <li>Use <code>Image.NO</code> as a fake signal that appears sometimes and SHOULDN'T be clicked</li>
+        </ul>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Concept Check</div>
+        <p>In your notebook, write next to each concept which part of the game uses it:</p>
+        <table class="ui celled table">
+          <thead><tr><th>Concept</th><th>Where does it appear in the game?</th></tr></thead>
+          <tbody>
+            <tr><td>Sequence</td><td></td></tr>
+            <tr><td>Selection (if/elif/else)</td><td></td></tr>
+            <tr><td>Loop (while)</td><td></td></tr>
+            <tr><td>Variable</td><td></td></tr>
+            <tr><td>Sensor / Input</td><td></td></tr>
+            <tr><td>Output</td><td></td></tr>
+            <tr><td>Random</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Shake to React</strong><br><br>
+        Modify the game so the player has to <strong>shake</strong> the micro:bit to react, instead of pressing A.
+        <br>Hint: Replace <code>button_a.is_pressed()</code> with <code>accelerometer.was_gesture("shake")</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 7</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 7 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">What does decomposition mean? How did you use it to plan the game today?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Did you complete the game? What two changes did you make? What was your best reaction time?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">What game would YOU build if you had more time? Describe it in 2–3 sentences using IPO language.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li><strong>Decomposition</strong> — break a big project into small steps before coding</li>
+      <li><code>random.randint()</code> creates unpredictability in programs</li>
+      <li><code>running_time()</code> measures time in milliseconds</li>
+      <li>All six previous concepts work <strong>together</strong> in one program</li>
+      <li><strong>Testing</strong> reveals bugs that only show up when you actually run the code</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll learn how to find and fix bugs — one of the most important coding skills! 🐛</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-06.html" class="ui labeled icon button" style="background:#5C0099;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 6: Sensing the World
+    </a>
+    <a href="lesson-08.html" class="ui right labeled icon button" style="background:#C40057;color:#fff;font-weight:800;">
+      Lesson 8: Fixing What's Broken <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 7 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>
