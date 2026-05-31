@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2 — Hello, micro:bit! | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2 cur" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh2">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 2 of 10</div>
+    <h1>Hello, micro:bit! 🐍</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">📝 Algorithm Design</span>
+      <span class="badge">📊 Uni-structural</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-PPM-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">🎯 Learning Intentions</h2>
+    <p>By the end of this lesson, you will be able to:</p>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Open the micro:bit Python Editor and describe what you see</li>
+      <li>Write a Python program that uses <strong>sequence</strong> (steps in order)</li>
+      <li>Identify <strong>syntax</strong> (the rules of writing code correctly)</li>
+      <li>Flash your code to the micro:bit OR run it in the simulator</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <p style="color:#555;">You'll know you've got it when you can:</p>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Write a program that scrolls a message on the micro:bit display</li>
+      <li><span class="cb">☐</span>Write a program that shows an image on the display</li>
+      <li><span class="cb">☐</span>Fix at least one syntax error yourself</li>
+      <li><span class="cb">☐</span>Explain what "sequence" means in your own words</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Sequence</div><div class="def">Steps that happen in order, one after another</div></div>
+      <div class="vocab-card"><div class="term">Syntax</div><div class="def">The rules of writing code — like grammar, but for programs</div></div>
+      <div class="vocab-card"><div class="term">Function</div><div class="def">A named command that does a specific job (e.g. <code>display.scroll()</code>)</div></div>
+      <div class="vocab-card"><div class="term">String</div><div class="def">A piece of text in code, always inside quotes: <code>"Hello"</code></div></div>
+      <div class="vocab-card"><div class="term">Flash</div><div class="def">Copying your program onto the micro:bit so it runs</div></div>
+      <div class="vocab-card"><div class="term">Simulator</div><div class="def">A fake micro:bit on your screen — you can test code without real hardware</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — Recipes are Algorithms</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Imagine you have found two recipies online. One has the steps in the right order. One is mixed up.</p>
+      <div class="quote"><em>Question: What goes wrong if you follow the steps in the wrong order?</em></div>
+      <p>This is why <strong>sequence</strong> matters in coding. If your steps are in the wrong order, your program won't work — just like a recipe gone wrong.</p>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Python, Syntax, and Sequence</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Why Python?</h3>
+      <p>Python is one of the most popular coding languages in the world. It's used in:</p>
+      <ul>
+        <li>Science and data analysis</li>
+        <li>Game development</li>
+        <li>Robotics and hardware projects</li>
+        <li>Artificial intelligence</li>
+      </ul>
+      <p>On the micro:bit, we use a version called <strong>MicroPython</strong> — it has the same rules as Python, but is designed to run on tiny hardware.</p>
+
+      <h3>The Python Editor — What You're Looking At</h3>
+      <p>Go to <a href="https://python.microbit.org/v/3" target="_blank">python.microbit.org/v/3</a>. You'll see:</p>
+      <pre style="background:#1e1e2e;color:#cdd6f4;border-radius:12px;padding:1.2em;font-size:0.88em;line-height:1.7;">┌────────────────┬──────────────────────────────┐
+│  SIMULATOR     │   CODE EDITOR                │
+│  (micro:bit    │                              │
+│   on screen)   │  from microbit import *      │
+│                │                              │
+│                │  display.scroll("Hello!")    │
+│  [Send to      │                              │
+│   micro:bit]   │                              │
+└────────────────┴──────────────────────────────┘</pre>
+      <ul>
+        <li><strong>Left side:</strong> The simulator — a virtual micro:bit you can test with</li>
+        <li><strong>Right side:</strong> The code editor — where you write your Python</li>
+        <li><strong>Top bar:</strong> Buttons to run in simulator or flash to the real device</li>
+      </ul>
+
+      <h3>Sequence in Python</h3>
+      <p>Python reads your code from <strong>top to bottom</strong>, one line at a time. This is called <strong>sequence</strong>.</p>
+      <pre><code class="language-python">from microbit import *          # Line 1 — load the micro:bit tools
+display.scroll("Hello!")        # Line 2 — scroll text across the display
+display.show(Image.HAPPY)       # Line 3 — show a happy face</code></pre>
+      <p>Line 2 happens before Line 3. Always.</p>
+
+      <h3>Syntax Rules to Know</h3>
+      <table class="ui celled table">
+        <thead><tr><th>Rule</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Text (strings) go inside quotes</td><td><code>"Hello"</code> or <code>'Hello'</code></td></tr>
+          <tr><td>Brackets come in pairs</td><td><code>display.scroll("Hi")</code></td></tr>
+          <tr><td>Python is case-sensitive</td><td><code>Display.scroll</code> ≠ <code>display.scroll</code></td></tr>
+          <tr><td>The first line must import micro:bit tools</td><td><code>from microbit import *</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>What is <code>from microbit import *</code>?</h3>
+      <div class="tip">This line loads all the tools that let you control the micro:bit. Think of it like opening your toolbox before you start building. You must include this line at the top of every micro:bit program.</div>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p>Watch your teacher type this program step by step. Don't type yet — just watch and listen.</p>
+      <pre><code class="language-python">from microbit import *
+
+display.scroll("Hello, World!")
+display.show(Image.HAPPY)
+sleep(1000)
+display.show(Image.SAD)</code></pre>
+
+      <h3>What each line does</h3>
+      <table class="ui celled striped table">
+        <thead><tr><th>Line</th><th>Input</th><th>Processing</th><th>Output</th></tr></thead>
+        <tbody>
+          <tr><td><code>from microbit import *</code></td><td>—</td><td>Loads micro:bit tools</td><td>—</td></tr>
+          <tr><td><code>display.scroll("Hello, World!")</code></td><td>The text "Hello, World!"</td><td>Scrolls it across display</td><td>Text on LEDs</td></tr>
+          <tr><td><code>display.show(Image.HAPPY)</code></td><td>The built-in HAPPY image</td><td>Shows the image</td><td>😊 on LEDs</td></tr>
+          <tr><td><code>sleep(1000)</code></td><td>Time (1000 milliseconds)</td><td>Waits</td><td>Nothing</td></tr>
+          <tr><td><code>display.show(Image.SAD)</code></td><td>The built-in SAD image</td><td>Shows the image</td><td>😢 on LEDs</td></tr>
+        </tbody>
+      </table>
+      <div class="tip">💡 <code>sleep(1000)</code> pauses the program for 1000 milliseconds. How many milliseconds is 2 seconds? (Hint: 1 second = 1000 ms)</div>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Write Your Own Programs</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <div class="task">
+        <div class="task-title">Task 1: The Basics (everyone)</div>
+        <p>Type this program exactly as shown. Then click <strong>Run</strong> in the simulator.</p>
+        <pre><code class="language-python">from microbit import *
+
+display.scroll("My name is [YOUR NAME]")
+display.show(Image.HAPPY)</code></pre>
+        <p>Replace <code>[YOUR NAME]</code> with your actual name.</p>
+        <p><strong>IPO check:</strong> What is the input? What is the output? What is the processing?</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Add More Steps</div>
+        <p>Add two more lines to make the micro:bit do something after showing the happy face. Try any of these images:</p>
+        <pre><code class="language-python">Image.HEART
+Image.SURPRISED
+Image.YES
+Image.NO
+Image.DUCK
+Image.DIAMOND</code></pre>
+        <p>Example:</p>
+        <pre><code class="language-python">from microbit import *
+
+display.scroll("My name is Alex")
+display.show(Image.HAPPY)
+sleep(2000)
+display.show(Image.HEART)</code></pre>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Break It (on purpose!)</div>
+        <p>Try deliberately making a <strong>syntax error</strong>. For example:</p>
+        <ul>
+          <li>Remove one bracket: <code>display.scroll("Hello"</code></li>
+          <li>Change the case: <code>Display.scroll("Hello")</code></li>
+          <li>Remove the quotes: <code>display.scroll(Hello)</code></li>
+        </ul>
+        <p>What error message do you get? Write it in your log. Now fix the error and make it work again.</p>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Your Own Image</strong><br><br>
+        You can draw your OWN image! Each number represents how bright an LED is (0 = off, 9 = brightest).
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+
+my_face = Image("09090:"
+                "09090:"
+                "00000:"
+                "90009:"
+                "09990")
+
+display.show(my_face)</code></pre>
+        Can you design a different image? Try a star, a letter, or a shape.
+      </div>
+
+      <div class="v2">
+        <strong>🔊 V2 Extension: Add Sound</strong>
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+import audio
+
+display.show(Image.HAPPY)
+audio.play(Sound.HAPPY)</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 2</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 2 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Explain what sequence means. How is it like a recipe?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">What programs did you write? What did your micro:bit display? Did you manage to create your own image or break the code on purpose?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">What question do you still have? What would you like your micro:bit to do that you don't know how to do yet?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <p>Today you learned:</p>
+    <ul class="sum-list">
+      <li>The <strong>Python Editor</strong> has a simulator and a code editor</li>
+      <li>Python reads code <strong>line by line</strong>, from top to bottom — this is <strong>sequence</strong></li>
+      <li><strong>Syntax</strong> is the grammar of code — small mistakes break your program</li>
+      <li><code>from microbit import *</code> must be at the top of every program</li>
+      <li><code>display.scroll()</code> and <code>display.show()</code> are outputs</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll learn how to make decisions in your code — "if this, then that"! 🔀</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-01.html" class="ui labeled icon button" style="background:#5C2D91;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 1: What Is a Computer Thinking?
+    </a>
+    <a href="lesson-03.html" class="ui right labeled icon button" style="background:#E07000;color:#fff;font-weight:800;">
+      Lesson 3: Making Decisions <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 2 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

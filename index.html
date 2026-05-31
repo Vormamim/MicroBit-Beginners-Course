@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VORMAMIM | Think Like a Computer | Micro:bit & Computational Thinking</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────── -->
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="index.html" class="header item">VORMAMIM | Think Like a Computer</a>
+    <a href="index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lessons/lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lessons/lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lessons/lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lessons/lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lessons/lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lessons/lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lessons/lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lessons/lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lessons/lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lessons/lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+    
+    <div class="right menu">
+      <div class="item">
+        <a href="https://www.paypal.com/ncp/payment/SHQNBXYYRTHBG" target="_blank" class="ui yellow button" style="font-weight: bold; background-color: #FFD140; color: #000000;">
+          ☕ Help fund this with $5 donation
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="main-content">
+
+  <!-- ── Hero ──────────────────────────────────────────── -->
+  
+  <div class="hero-section" style="padding: 60px 0;">
+  <div class="ui container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; text-align: left;">
+    
+    <div style="flex: 1; min-width: 300px;">
+      <h1 style="margin-top: 0;">Think Like a Computer</h1>
+      <p class="subtitle" style="margin-bottom: 1.5em;">A COMPLETELY FREE micro:bit course for curious minds interested in software development.</p>
+      <p style="font-size:1.25em; color:rgba(255,255,255,0.85); margin-bottom: 2em; margin-top: 2em; max-width: 550px;">
+      <p>Aligned with the 2026 NSW Technology 7–8 Syllabus</p>
+      <p> Learn to build solutions in Python, control a <b>real or virtual micro:bit</b></p>
+      <a href="lessons/lesson-01.html" class="ui huge primary button" style="background:#00B4D8; margin: 0;">
+        Start Here <span style="margin-left: 0.5em;">🚀</span>
+      </a>
+    </div>
+
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+        <img src="https://s3.amazonaws.com/cdn.freshdesk.com/data/helpdesk/attachments/production/19066132803/original/_VsZQM1U7ZqhglNlYwyUaxchWa35KCYMWw.png?1602156679" 
+              alt="Illustration of a micro:bit with code and icons" 
+              style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+
+</div>
+
+  <!-- ── Quick setup ────────────────────────────────────── -->
+  <div class="ui container" style="padding-top:2.5em;">
+    <div class="ui three stackable cards" style="margin-bottom:0;">
+      <div class="card" style="border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,0.08);">
+        <div class="content">
+          <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;">💻 What you need</div>
+          <div class="description" style="margin-top:0.7em;">A web browser (Chrome or Edge), access to
+            <a href="https://python.microbit.org/v/3" target="_blank">python.microbit.org/v/3</a>,
+            and optionally a BBC micro:bit. The built-in simulator means you can do everything online — no hardware required!
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,0.08);">
+        <div class="content">
+          <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;">🧠 What you'll learn</div>
+          <div class="description" style="margin-top:0.7em;">
+            Computational thinking (decomposition, patterns, abstraction, algorithms),
+            Python programming, and how to design, build and debug your own micro:bit projects.
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,0.08);">
+        <div class="content">
+          <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;">📖 How it works</div>
+          <div class="description" style="margin-top:0.7em;">
+            Each lesson has a thinking activity, a theory section, a coding tutorial,
+            a practice task, and prompt to update a personal progress log. You build skills lesson by lesson.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Lessons grid ──────────────────────────────────── -->
+    <div class="lessons-section">
+      <p class="sub">Start with lesson 1 to begin your journey!</p>
+      <div class="cards-grid">
+
+        <a href="lessons/lesson-01.html" class="lcard lc1">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">1</div>
+            <div class="lcard-title">What Is a Computer Thinking?</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Decomposition</span>
+              <span class="lcard-tag">🔢 Input → Process → Output</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Uni-structural</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-02.html" class="lcard lc2">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">2</div>
+            <div class="lcard-title">Hello, micro:bit!</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Algorithm Design</span>
+              <span class="lcard-tag">🐍 First Python code</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Uni-structural</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-03.html" class="lcard lc3">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">3</div>
+            <div class="lcard-title">Making Decisions</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Pattern Recognition</span>
+              <span class="lcard-tag">🔀 if / else</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Multi-structural</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-04.html" class="lcard lc4">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">4</div>
+            <div class="lcard-title">Repeat Yourself</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Pattern Recognition</span>
+              <span class="lcard-tag">🔄 Loops</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Multi-structural</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-05.html" class="lcard lc5">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">5</div>
+            <div class="lcard-title">Talking to the World</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Abstraction</span>
+              <span class="lcard-tag">📦 Variables &amp; data</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Relational</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-06.html" class="lcard lc6">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">6</div>
+            <div class="lcard-title">Sensing the World</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Decomposition</span>
+              <span class="lcard-tag">🌡️ Sensors</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Relational</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-07.html" class="lcard lc7">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">7</div>
+            <div class="lcard-title">Build a Mini-Game</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">All four CT pillars</span>
+              <span class="lcard-tag">🎮 Reaction timer</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Relational</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-08.html" class="lcard lc8">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">8</div>
+            <div class="lcard-title">Fixing What's Broken</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">Abstraction</span>
+              <span class="lcard-tag">🐛 Debugging</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Extended Abstract</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-09.html" class="lcard lc9">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">9</div>
+            <div class="lcard-title">Design Your Own</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">All four CT pillars</span>
+              <span class="lcard-tag">✏️ Your project</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Extended Abstract</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+        <a href="lessons/lesson-10.html" class="lcard lc10">
+          <div class="lcard-head">
+            <div class="lcard-bg-num">10</div>
+            <div class="lcard-title">Show What You Know</div>
+            <div class="lcard-tags">
+              <span class="lcard-tag">All four CT pillars</span>
+              <span class="lcard-tag">🎉 Showcase &amp; reflect</span>
+            </div>
+          </div>
+          <div class="lcard-foot">
+            <span class="lcard-solo">Extended Abstract</span>
+            <span class="lcard-btn">Start →</span>
+          </div>
+        </a>
+
+      </div><!-- /cards-grid -->
+    </div>
+
+    <!-- ── CT Pillars explainer ──────────────────────────── -->
+    <div style="margin:2em 0;padding:2em;background:linear-gradient(135deg,#f8f0ff,#f0f4ff);border-radius:20px;">
+      <h2 style="font-weight:900;color:#5C2D91;margin-bottom:1em;">The Four Computational Thinking Pillars</h2>
+      <div class="ui four stackable cards">
+        <div class="card" style="border-top:4px solid #5C2D91;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#5C2D91;">🧩 Decomposition</div>
+            <div class="description" style="margin-top:0.5em;">Breaking a big problem into smaller, manageable pieces</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #4361EE;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#4361EE;">🔍 Pattern Recognition</div>
+            <div class="description" style="margin-top:0.5em;">Spotting similarities, repetition and patterns in problems</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #06A17A;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#06A17A;">🎭 Abstraction</div>
+            <div class="description" style="margin-top:0.5em;">Focusing on what matters and ignoring unnecessary details</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #E07000;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#E07000;">📝 Algorithm Design</div>
+            <div class="description" style="margin-top:0.5em;">Creating step-by-step instructions to solve any problem</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CT Pillars explainer ──────────────────────────── -->
+    <div style="margin:2em 0;padding:2em;background:linear-gradient(135deg,#f8f0ff,#f0f4ff);border-radius:20px;">
+      <h2 style="font-weight:900;color:#5C2D91;margin-bottom:1em;">Level Up YourUnderstanding in this course</h2>
+      <div class="ui four stackable cards">
+        <div class="card" style="border-top:4px solid #5C2D91;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#5C2D91;">Uni-Structural Level</div>
+            <div class="description" style="margin-top:0.5em;">You focus on one isolated concept. You can write a single command or define a term, but you cannot connect it to other code or use it to solve problems</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #4361EE;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#4361EE;">Multi-Structural Level</div>
+            <div class="description" style="margin-top:0.5em;">You handle multiple coding components but treat them as separate pieces. You write linear steps but struggle to integrate them or see how they interact within a full program.</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #06A17A;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#06A17A;">Relational Level</div>
+            <div class="description" style="margin-top:0.5em;">You can see connections between different concepts and understand how they relate to each other. You understand how variables, loops, and functions connect, allowing you to build, explain, and debug working, structured software systems.</div>
+          </div>
+        </div>
+        <div class="card" style="border-top:4px solid #E07000;border-radius:12px;">
+          <div class="content">
+            <div class="header" style="font-family:'Nunito',sans-serif;font-weight:800;color:#E07000;">Multi-Relational Level</div>
+            <div class="description" style="margin-top:0.5em;">You can integrate multiple concepts and see how they work together to solve complex problems. You look beyond the immediate program to optimize algorithm efficiency, build highly reusable frameworks, or apply computational logic to non-coding, real-world problems.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div><!-- /main-content ends here -->
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  <p>No data is collected or stored in the use of this resource | A completely free, open-access micro:bit course designed for curious minds. No account required—just open a lesson and start building</p>
+  Copyright © <a href="https://vormamim.com" target="_blank">vormamim.com</a><br>
+  Coding environment: <a href="https://python.microbit.org/v/3" target="_blank">python.microbit.org/v/3</a>
+  | ALSO Check out LoFiPy a browser IDE for beginners: <a href="https://vormamim.com/lofipy" target="_blank">LoFiPy - Over 5000 happy users!</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="assets/js/course.js"></script>
+</body>
+</html>

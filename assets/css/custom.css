@@ -1,0 +1,304 @@
+/* ====================================================
+   Think Like a Computer — Custom Styles
+   ==================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --mb-purple: #5C2D91;
+  --mb-cyan: #00B4D8;
+}
+
+body { font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 1.75; color: #2d2d2d; }
+
+/* ── Navigation ─────────────────────────────────────── */
+.ui.fixed.top.menu {
+  background: linear-gradient(135deg, #3d1a63, #5C2D91) !important;
+  border-bottom: 3px solid var(--mb-cyan) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important;
+}
+.ui.fixed.top.menu .item,
+.ui.fixed.top.menu .header.item { color: #fff !important; font-family: 'Nunito', sans-serif; font-weight: 700; }
+.ui.fixed.top.menu .item:hover,
+.ui.fixed.top.menu .item.active { background: rgba(255,255,255,0.12) !important; color: #7df9ff !important; }
+.ui.fixed.top.menu .header.item { font-size: 1.1em !important; letter-spacing: -0.3px; }
+.ui.fixed.top.menu .simple.dropdown .menu {
+  background: #3d1a63 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  border-radius: 10px !important;
+  margin-top: 0 !important;
+  min-width: 320px;
+}
+.ui.fixed.top.menu .simple.dropdown .menu .item { color: #eee !important; font-weight: 600; padding: 0.7em 1.2em !important; }
+.ui.fixed.top.menu .simple.dropdown .menu .item:hover { background: rgba(255,255,255,0.1) !important; color: #7df9ff !important; }
+.lesson-dot {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; border-radius: 50%; font-size: 0.75em; font-weight: 800;
+  color: #fff; margin-right: 0.4em; flex-shrink: 0; vertical-align: middle;
+}
+.ld-1  { background: #5C2D91; } .ld-2  { background: #4361EE; } .ld-3  { background: #F77F00; }
+.ld-4  { background: #06A17A; } .ld-5  { background: #C42B4B; } .ld-6  { background: #5C0099; }
+.ld-7  { background: #1A6ED8; } .ld-8  { background: #C40057; } .ld-9  { background: #C04000; }
+.ld-10 { background: #5F00C7; }
+
+/* ── Main content push ───────────────────────────────── */
+.main-content { margin-top: 60px; }
+
+/* ── Hero (index) ────────────────────────────────────── */
+.hero-section {
+  background: linear-gradient(135deg, #3d1a63 0%, #5C2D91 40%, #0083B0 100%);
+  padding: 5em 2em 4em; text-align: center; color: #fff;
+}
+.hero-section h1 {
+  font-size: clamp(2em, 5vw, 3.2em); font-weight: 900; color: #fff;
+  margin: 0 0 0.4em; text-shadow: 0 3px 12px rgba(0,0,0,0.35); line-height: 1.15;
+}
+.hero-section .subtitle { font-size: 1.25em; color: rgba(255,255,255,0.9); margin-bottom: 2em; font-weight: 600; }
+.hero-stats { display: flex; justify-content: center; gap: 1.5em; flex-wrap: wrap; margin-top: 1.5em; }
+.hero-stat {
+  background: rgba(255,255,255,0.15); border-radius: 16px; padding: 1em 1.8em;
+  backdrop-filter: blur(6px); min-width: 120px;
+}
+.hero-stat .num { font-size: 2.2em; font-weight: 900; display: block; line-height: 1; }
+.hero-stat .lbl { font-size: 0.8em; opacity: 0.85; font-weight: 600; display: block; margin-top: 0.2em; }
+
+/* ── Lesson Cards (index) ────────────────────────────── */
+.lessons-section { padding: 3em 0; }
+.lessons-section h2 { text-align: center; font-size: 1.8em; font-weight: 900; margin-bottom: 0.3em; color: #333; }
+.lessons-section .sub { text-align: center; color: #777; margin-bottom: 2em; font-size: 1.05em; }
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.4em;
+}
+.lcard {
+  border-radius: 18px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  transition: transform 0.22s ease, box-shadow 0.22s ease; text-decoration: none; display: block;
+  background: #fff;
+}
+.lcard:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.16); }
+.lcard-head {
+  padding: 1.4em 1.4em 1em; color: #fff; position: relative;
+  min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end;
+}
+.lcard-bg-num {
+  position: absolute; top: -0.05em; right: 0.15em; font-size: 5em; font-weight: 900;
+  opacity: 0.18; line-height: 1; color: #fff; pointer-events: none; user-select: none;
+}
+.lcard-title { font-size: 1.05em; font-weight: 800; line-height: 1.3; position: relative; z-index: 1; }
+.lcard-tags { margin-top: 0.5em; display: flex; flex-wrap: wrap; gap: 0.3em; position: relative; z-index: 1; }
+.lcard-tag {
+  background: rgba(255,255,255,0.22); border-radius: 20px; padding: 0.15em 0.65em;
+  font-size: 0.72em; font-weight: 700;
+}
+.lcard-foot {
+  padding: 0.9em 1.4em; background: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lcard-solo { font-size: 0.8em; color: #888; font-weight: 600; }
+.lcard-btn {
+  font-size: 0.82em; font-weight: 800; border-radius: 20px; padding: 0.4em 1.1em;
+  border: 2.5px solid; text-decoration: none; transition: all 0.2s;
+  display: inline-block;
+}
+.lcard-btn:hover { color: #fff !important; }
+
+/* Card colour themes */
+.lc1  .lcard-head { background: linear-gradient(135deg,#5C2D91,#7B3FBF); }
+.lc2  .lcard-head { background: linear-gradient(135deg,#4361EE,#6B8AFD); }
+.lc3  .lcard-head { background: linear-gradient(135deg,#E07000,#FFA040); }
+.lc4  .lcard-head { background: linear-gradient(135deg,#06A17A,#06D6A0); }
+.lc5  .lcard-head { background: linear-gradient(135deg,#C42B4B,#E63946); }
+.lc6  .lcard-head { background: linear-gradient(135deg,#5C0099,#7209B7); }
+.lc7  .lcard-head { background: linear-gradient(135deg,#1A6ED8,#3A86FF); }
+.lc8  .lcard-head { background: linear-gradient(135deg,#C40057,#FF006E); }
+.lc9  .lcard-head { background: linear-gradient(135deg,#B03900,#FB5607); }
+.lc10 .lcard-head { background: linear-gradient(135deg,#5F00C7,#8338EC); }
+
+.lc1  .lcard-btn { color:#5C2D91;border-color:#5C2D91; } .lc1  .lcard-btn:hover { background:#5C2D91; }
+.lc2  .lcard-btn { color:#4361EE;border-color:#4361EE; } .lc2  .lcard-btn:hover { background:#4361EE; }
+.lc3  .lcard-btn { color:#E07000;border-color:#E07000; } .lc3  .lcard-btn:hover { background:#E07000; }
+.lc4  .lcard-btn { color:#06A17A;border-color:#06A17A; } .lc4  .lcard-btn:hover { background:#06A17A; }
+.lc5  .lcard-btn { color:#C42B4B;border-color:#C42B4B; } .lc5  .lcard-btn:hover { background:#C42B4B; }
+.lc6  .lcard-btn { color:#5C0099;border-color:#5C0099; } .lc6  .lcard-btn:hover { background:#5C0099; }
+.lc7  .lcard-btn { color:#1A6ED8;border-color:#1A6ED8; } .lc7  .lcard-btn:hover { background:#1A6ED8; }
+.lc8  .lcard-btn { color:#C40057;border-color:#C40057; } .lc8  .lcard-btn:hover { background:#C40057; }
+.lc9  .lcard-btn { color:#B03900;border-color:#B03900; } .lc9  .lcard-btn:hover { background:#B03900; }
+.lc10 .lcard-btn { color:#5F00C7;border-color:#5F00C7; } .lc10 .lcard-btn:hover { background:#5F00C7; }
+
+/* ── Teacher CTA ─────────────────────────────────────── */
+.teacher-cta {
+  background: linear-gradient(135deg,#1a1a2e,#16213e);
+  border-radius: 20px; padding: 2.5em; color: #fff; text-align: center; margin: 2em 0;
+}
+.teacher-cta h3 { color: #fff; font-size: 1.5em; font-weight: 900; margin-bottom: 0.5em; }
+.teacher-cta p { color: rgba(255,255,255,0.8); margin-bottom: 1.5em; }
+
+/* ── Lesson Hero (lesson pages) ──────────────────────── */
+.lesson-hero { padding: 2.5em 0 2em; color: #fff; }
+.lesson-hero .eyebrow {
+  font-size: 0.8em; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+  opacity: 0.82; margin-bottom: 0.4em;
+}
+.lesson-hero h1 {
+  font-size: clamp(1.6em, 4vw, 2.4em); font-weight: 900; color: #fff;
+  margin: 0 0 0.5em; line-height: 1.2;
+}
+.lesson-meta { display: flex; gap: 0.8em; flex-wrap: wrap; }
+.lesson-meta .badge {
+  background: rgba(255,255,255,0.2); border-radius: 20px; padding: 0.3em 0.9em;
+  font-size: 0.82em; font-weight: 700; backdrop-filter: blur(4px);
+}
+/* Hero colour variants */
+.lh1  { background: linear-gradient(135deg,#5C2D91,#7B3FBF); }
+.lh2  { background: linear-gradient(135deg,#4361EE,#6B8AFD); }
+.lh3  { background: linear-gradient(135deg,#E07000,#FFA040); }
+.lh4  { background: linear-gradient(135deg,#06A17A,#06D6A0); }
+.lh5  { background: linear-gradient(135deg,#C42B4B,#E63946); }
+.lh6  { background: linear-gradient(135deg,#5C0099,#7209B7); }
+.lh7  { background: linear-gradient(135deg,#1A6ED8,#3A86FF); }
+.lh8  { background: linear-gradient(135deg,#C40057,#FF006E); }
+.lh9  { background: linear-gradient(135deg,#B03900,#FB5607); }
+.lh10 { background: linear-gradient(135deg,#5F00C7,#8338EC); }
+
+/* ── Progress steps ──────────────────────────────────── */
+.progress-bar-wrap { background: #f5f5f5; border-bottom: 1px solid #e0e0e0; padding: 0.7em 0; overflow-x: auto; }
+.progress-steps { display: flex; justify-content: center; gap: 0.4em; padding: 0 1em; min-width: max-content; }
+.ps {
+  width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 0.85em; text-decoration: none; background: #ddd; color: #999;
+  transition: all 0.2s; flex-shrink: 0; border: 2px solid transparent;
+}
+.ps:hover { filter: brightness(0.92); color: #555; }
+.ps.cur { color: #fff; border-color: rgba(0,0,0,0.15); }
+.ps1.cur  { background:#5C2D91; } .ps2.cur  { background:#4361EE; } .ps3.cur  { background:#E07000; }
+.ps4.cur  { background:#06A17A; } .ps5.cur  { background:#C42B4B; } .ps6.cur  { background:#5C0099; }
+.ps7.cur  { background:#1A6ED8; } .ps8.cur  { background:#C40057; } .ps9.cur  { background:#B03900; }
+.ps10.cur { background:#5F00C7; }
+
+/* ── Section boxes ───────────────────────────────────── */
+.ls { border-radius: 16px; margin: 1.6em 0; overflow: hidden; box-shadow: 0 3px 14px rgba(0,0,0,0.08); }
+.ls-head {
+  display: flex; align-items: center; gap: 0.6em; padding: 0.9em 1.3em;
+  color: #fff; font-weight: 800; font-size: 1.05em;
+}
+.ls-head .ls-icon { font-size: 1.4em; }
+.ls-head .ls-time {
+  margin-left: auto; background: rgba(255,255,255,0.22); border-radius: 20px;
+  padding: 0.2em 0.7em; font-size: 0.75em; white-space: nowrap;
+}
+.ls-body { padding: 1.5em; }
+
+/* Section colour schemes */
+.ls-hook   { background:#fff9f3; border:2px solid #FF6B35; }
+.ls-hook   .ls-head { background:#E85D04; }
+.ls-theory { background:#f0f4ff; border:2px solid #4361EE; }
+.ls-theory .ls-head { background:#2D3A8C; }
+.ls-model  { background:#faf0ff; border:2px solid #7209B7; }
+.ls-model  .ls-head { background:#5C0099; }
+.ls-practice { background:#f0fff8; border:2px solid #06D6A0; }
+.ls-practice .ls-head { background:#027A5D; }
+.ls-log    { background:#f0fcff; border:2px solid #00B4D8; }
+.ls-log    .ls-head { background:#006B8A; }
+.ls-meet   { background:#fff0f8; border:2px solid #C40057; }
+.ls-meet   .ls-head { background:#C40057; }
+
+/* ── Section sub-headings ────────────────────────────── */
+.ls-body h3 { font-size: 1.05em; font-weight: 800; color:#333; margin:1.4em 0 0.5em; border-bottom:2px solid #eee; padding-bottom:0.3em; }
+.ls-body h3:first-child { margin-top: 0; }
+
+/* ── Vocab grid ──────────────────────────────────────── */
+.vocab-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:0.9em; margin:1em 0; }
+.vocab-card {
+  background:#fff; border-radius:12px; padding:0.9em 1.1em;
+  border-left:4px solid #4361EE; box-shadow:0 2px 10px rgba(0,0,0,0.07);
+}
+.vocab-card .term { font-weight:800; color:#2D3A8C; font-size:1em; }
+.vocab-card .def  { color:#555; font-size:0.92em; margin-top:0.25em; }
+
+/* ── Success list ────────────────────────────────────── */
+.success-list { list-style:none; padding:0; margin:0; }
+.success-list li {
+  display:flex; align-items:flex-start; gap:0.7em; padding:0.5em 0;
+  border-bottom:1px solid #eee; line-height:1.5;
+}
+.success-list li:last-child { border-bottom:none; }
+.success-list li .cb { font-size:1.25em; color:#bbb; flex-shrink:0; line-height:1.3; }
+
+/* ── Code blocks ─────────────────────────────────────── */
+pre { border-radius:12px !important; margin:1em 0 !important; }
+pre code { font-size:0.88em !important; font-family:'Fira Code','Courier New',monospace !important; }
+code:not([class]) {
+  background:rgba(0,0,0,0.07); border-radius:4px; padding:0.1em 0.4em;
+  font-family:'Fira Code','Courier New',monospace; font-size:0.88em;
+}
+
+/* ── Callout boxes ───────────────────────────────────── */
+.tip   { background:#FFF9C4; border-left:4px solid #F9A825; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; }
+.info  { background:#E3F2FD; border-left:4px solid #1976D2; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; }
+.warn  { background:#FFF3E0; border-left:4px solid #E65100; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; }
+.v2    { background:#F3E5F5; border-left:4px solid #7B1FA2; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; }
+.ext   { background:#E8EAF6; border-left:4px solid #3F51B5; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; }
+.quote { background:#f5f5f5; border-left:4px solid #999; border-radius:0 10px 10px 0; padding:0.9em 1.1em; margin:1em 0; font-style:italic; }
+
+/* ── Task boxes ──────────────────────────────────────── */
+.task {
+  background:#fff; border-radius:14px; padding:1.2em 1.5em; margin:1.1em 0;
+  border:2px solid #e0e0e0; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+.task-title { font-weight:800; font-size:1.05em; color:#222; margin-bottom:0.8em; padding-bottom:0.5em; border-bottom:2px solid #f0f0f0; }
+
+/* ── Log template ────────────────────────────────────── */
+.log-card {
+  background:#fff; border-radius:12px; padding:1.5em; border:2.5px dashed #00B4D8; margin:1em 0;
+}
+.log-prompt { margin:1em 0; }
+.log-prompt .lp-label { font-weight:800; color:#006B8A; display:block; margin-bottom:0.25em; }
+.log-prompt .lp-hint  { color:#888; font-style:italic; font-size:0.9em; }
+
+/* ── Summary ─────────────────────────────────────────── */
+.summary-box { background:#f9f9f9; border:2px solid #ddd; border-radius:16px; padding:1.5em; margin:1.5em 0; }
+.summary-box h2 { color:#444; font-weight:900; margin-bottom:0.8em; }
+.sum-list { list-style:none; padding:0; margin:0; }
+.sum-list li { padding:0.4em 0; display:flex; align-items:flex-start; gap:0.5em; line-height:1.5; }
+.sum-list li::before { content:"✅"; flex-shrink:0; }
+.next-teaser { margin-top:1em; color:#666; font-style:italic; }
+
+/* ── IPO visual ──────────────────────────────────────── */
+.ipo-row { display:flex; align-items:stretch; gap:0; margin:1.2em 0; flex-wrap:wrap; }
+.ipo-box { flex:1; min-width:120px; padding:0.9em 1em; border-radius:12px; text-align:center; margin:0.3em; }
+.ipo-box .ipo-lbl { font-weight:900; font-size:0.78em; text-transform:uppercase; letter-spacing:1px; display:block; margin-bottom:0.3em; }
+.ipo-box .ipo-val { font-size:0.9em; color:#444; }
+.ipo-in   { background:#e3f2fd; border:2px solid #1976D2; } .ipo-in   .ipo-lbl { color:#1976D2; }
+.ipo-proc { background:#f3e5f5; border:2px solid #7B1FA2; } .ipo-proc .ipo-lbl { color:#7B1FA2; }
+.ipo-out  { background:#e8f5e9; border:2px solid #388E3C; } .ipo-out  .ipo-lbl { color:#388E3C; }
+
+/* ── Lesson nav ──────────────────────────────────────── */
+.lesson-nav {
+  margin:2.5em 0 1em; padding:1.5em 0; border-top:2px solid #eee;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1em;
+}
+.lesson-nav .spacer { min-width:140px; }
+
+/* ── Tables ──────────────────────────────────────────── */
+.ui.table { border-radius:10px !important; overflow:hidden; font-family:'Nunito',sans-serif; }
+.ui.table th { font-weight:800 !important; }
+
+/* ── Teacher guide specifics ─────────────────────────── */
+.tg-section { background:#fff; border-radius:16px; padding:2em; margin:1.5em 0; box-shadow:0 2px 12px rgba(0,0,0,0.07); border-left:5px solid #5C2D91; }
+.tg-section h2 { color:#5C2D91; font-weight:900; margin-bottom:1em; }
+
+/* ── Footer ──────────────────────────────────────────── */
+.site-footer { background:#1a1a2e; color:#9a9ab5; text-align:center; padding:2.5em 1em; margin-top:4em; font-size:0.9em; }
+.site-footer a { color:#00B4D8; }
+.site-footer strong { color:#ddd; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width:768px) {
+  .hero-section { padding:3em 1em 2.5em; }
+  .lesson-hero  { padding:1.8em 0 1.5em; }
+  .lesson-hero h1 { font-size:1.6em; }
+  .ipo-row { flex-direction:column; }
+  .lesson-nav { flex-direction:column; align-items:stretch; }
+  .ui.fixed.top.menu .item { padding:0.7em !important; font-size:0.9em; }
+}

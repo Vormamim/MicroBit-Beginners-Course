@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3 — Making Decisions | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3 cur" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh3">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 3 of 10</div>
+    <h1>Making Decisions 🔀</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🔍 Pattern Recognition</span>
+      <span class="badge">📊 Multi-structural</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-MSC-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">🎯 Learning Intentions</h2>
+    <p>By the end of this lesson, you will be able to:</p>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Explain what <strong>selection</strong> means in programming</li>
+      <li>Write an <code>if</code> statement that reacts to a button press</li>
+      <li>Write an <code>if/else</code> statement that handles two different situations</li>
+      <li>Identify the button press as an <strong>input</strong> that controls <strong>processing</strong></li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Write a program where pressing Button A shows one thing and pressing Button B shows another</li>
+      <li><span class="cb">☐</span>Explain what happens when neither button is pressed</li>
+      <li><span class="cb">☐</span>Draw a simple flowchart showing an if/else decision</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Selection</div><div class="def">When a program makes a choice — "IF this happens, THEN do that"</div></div>
+      <div class="vocab-card"><div class="term">Condition</div><div class="def">A question that is either True or False</div></div>
+      <div class="vocab-card"><div class="term"><code>if</code> statement</div><div class="def">Code that runs only when a condition is True</div></div>
+      <div class="vocab-card"><div class="term"><code>else</code></div><div class="def">Code that runs when the condition is NOT True</div></div>
+      <div class="vocab-card"><div class="term"><code>while True</code></div><div class="def">A loop that keeps running forever — the program stays active</div></div>
+      <div class="vocab-card"><div class="term">Indentation</div><div class="def">The spaces at the start of a line that tell Python what belongs inside an <code>if</code> block</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — Flowcharts Are Everywhere</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Imagine a drawing of a <strong>flowchart</strong> showing what happens when your phone rings.</p>
+      <pre style="background:#1e1e2e;color:#cdd6f4;border-radius:12px;padding:1.2em;font-size:0.9em;line-height:1.8;">      Phone rings
+           │
+           ▼
+    Do you know the
+      caller? ────── NO ──▶ Ignore it
+           │
+          YES
+           │
+           ▼
+       Answer it</pre>
+      <div class="quote"><em>Question: Can you think of two other everyday decisions that could be shown as a flowchart?</em></div>
+      <p>This is <strong>selection</strong> — making a choice based on a condition. Your code can do this too.</p>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Selection: if, else, and while True</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>The problem with sequence alone</h3>
+      <p>In Lesson 2, your code ran once from top to bottom and stopped. But what if you want your micro:bit to <strong>keep watching for button presses</strong>? You need two things:</p>
+      <ol>
+        <li>A <strong>loop</strong> to keep the program running (<code>while True</code>)</li>
+        <li>A <strong>decision</strong> to check what happened (<code>if</code> / <code>else</code>)</li>
+      </ol>
+
+      <h3><code>while True</code> — Keep the program alive</h3>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    # This code keeps running FOREVER
+    # until you unplug the micro:bit
+    display.show(Image.HEART)</code></pre>
+      <p>The <code>while True:</code> block keeps looping. Everything <strong>indented</strong> underneath it runs again and again.</p>
+
+      <h3><code>if</code> — Make a decision</h3>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)</code></pre>
+      <p>Read this as: "While the program is running, <strong>if</strong> Button A is pressed, <strong>then</strong> show a happy face."</p>
+
+      <h3><code>if</code> / <code>else</code> — Two options</h3>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    if button_a.is_pressed():
+        display.show(Image.HAPPY)
+    else:
+        display.show(Image.SAD)</code></pre>
+      <p>Read this as: "If Button A is pressed, show happy. Otherwise (<em>else</em>), show sad."</p>
+
+      <h3>Indentation — Why spaces matter</h3>
+      <p>Python uses <strong>indentation</strong> (spaces at the start of a line) to know what belongs inside an <code>if</code> block. If you get this wrong, your code won't work.</p>
+      <pre><code class="language-python">while True:
+    if button_a.is_pressed():   # This is INSIDE while True
+        display.show(Image.YES) # This is INSIDE the if block
+    display.show(Image.NO)      # Inside while True but OUTSIDE the if</code></pre>
+      <div class="tip">💡 In the Python Editor, pressing <strong>Tab</strong> automatically adds the right indentation for you.</div>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p>Watch your teacher build this program step by step.</p>
+      <p><strong>Goal:</strong> Press A to show a tick (YES). Press B to show a cross (NO). If nothing is pressed, show a blank display.</p>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    if button_a.is_pressed():
+        display.show(Image.YES)
+    elif button_b.is_pressed():
+        display.show(Image.NO)
+    else:
+        display.clear()</code></pre>
+      <div class="tip">💡 <strong>New thing:</strong> <code>elif</code> means "else if" — another condition to check before going to <code>else</code>.</div>
+
+      <h3>IPO Breakdown</h3>
+      <div class="ipo-row">
+        <div class="ipo-box ipo-in"><span class="ipo-lbl">INPUT</span><span class="ipo-val">Button A press, Button B press, or nothing</span></div>
+        <div class="ipo-box ipo-proc"><span class="ipo-lbl">PROCESSING</span><span class="ipo-val">The if/elif/else checks which button was pressed</span></div>
+        <div class="ipo-box ipo-out"><span class="ipo-lbl">OUTPUT</span><span class="ipo-val">YES image, NO image, or blank display</span></div>
+      </div>
+
+      <h3>Flowchart of this program</h3>
+      <pre style="background:#1e1e2e;color:#cdd6f4;border-radius:12px;padding:1.2em;font-size:0.88em;line-height:1.8;">      Start
+        │
+        ▼
+  ┌─ while True ─────────────────┐
+  │                              │
+  │  Is Button A pressed?        │
+  │    YES → show Image.YES      │
+  │    NO ▼                      │
+  │  Is Button B pressed?        │
+  │    YES → show Image.NO       │
+  │    NO ▼                      │
+  │  else → clear display        │
+  │                              │
+  └──────────────────────────────┘
+        (loops back to start)</pre>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Program Your Own Decisions</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <div class="task">
+        <div class="task-title">Task 1: Magic 8-Ball (everyone)</div>
+        <p>Write a program where pressing <strong>Button A</strong> shows Image.YES, pressing <strong>Button B</strong> shows Image.NO, and when nothing is pressed, the display shows a question mark.</p>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    if button_a.is_pressed():
+        # YOUR CODE HERE
+    elif button_b.is_pressed():
+        # YOUR CODE HERE
+    else:
+        # YOUR CODE HERE</code></pre>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Happy / Sad Switch</div>
+        <p>Modify your program so:</p>
+        <ul>
+          <li>Button A shows a HAPPY face</li>
+          <li>Button B shows a SAD face</li>
+          <li>Nothing pressed = SURPRISED face</li>
+        </ul>
+        <p>Test it in the simulator by clicking the A and B buttons on the virtual micro:bit.</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Draw the Flowchart</div>
+        <p>In your notebook, draw a flowchart for your Task 2 program. Use diamond shapes for decisions and rectangles for actions. Show what happens for each button, and what happens when neither is pressed.</p>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Temperature Check</strong><br><br>
+        Can you use <code>if</code> to make the micro:bit show a hot or cold image based on temperature?
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+
+while True:
+    temp = temperature()   # Get the current temperature (in Celsius)
+    if temp &gt; 25:
+        display.scroll("HOT")
+    else:
+        display.scroll("COOL")
+    sleep(2000)</code></pre>
+        Try changing the number <code>25</code>. What happens if you use <code>20</code>? Or <code>30</code>?
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 3</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 3 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Explain what selection means and what if/else does. Why do we need while True?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Which tasks did you complete? Did your flowchart match your code?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">Can you think of a time where you would need more than 2 options? What if there were 3 conditions to check?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li><strong>Selection</strong> lets your program make choices</li>
+      <li><code>while True</code> keeps the program running in a loop</li>
+      <li><code>if</code> runs code when a condition is <strong>True</strong></li>
+      <li><code>else</code> runs code when the condition is <strong>False</strong></li>
+      <li><code>elif</code> checks another condition before going to <code>else</code></li>
+      <li><strong>Indentation</strong> tells Python what is inside each block</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll learn how to make your program repeat actions using <strong>loops</strong>! 🔄</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-02.html" class="ui labeled icon button" style="background:#4361EE;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 2: Hello, micro:bit!
+    </a>
+    <a href="lesson-04.html" class="ui right labeled icon button" style="background:#06A17A;color:#fff;font-weight:800;">
+      Lesson 4: Repeat Yourself <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 3 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

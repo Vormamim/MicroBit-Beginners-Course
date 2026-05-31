@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5 — Talking to the World | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      📚 Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5 cur" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh5">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 5 of 10</div>
+    <h1>Talking to the World 📦</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🎭 Abstraction</span>
+      <span class="badge">📊 Relational</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-DES-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Define what a <strong>variable</strong> is and why it is useful</li>
+      <li>Create, update, and display variables in a Python program</li>
+      <li>Identify the three most common <strong>data types</strong> (integer, string, boolean)</li>
+      <li>Use a variable to store sensor data and display it</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Create a variable and change its value during the program</li>
+      <li><span class="cb">☐</span>Display a variable's value on the micro:bit screen</li>
+      <li><span class="cb">☐</span>Explain what would break if you removed the variable from your program</li>
+      <li><span class="cb">☐</span>Identify the data type of at least three values</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Variable</div><div class="def">A named storage space for data — like a labelled box</div></div>
+      <div class="vocab-card"><div class="term">Integer</div><div class="def">A whole number (e.g. 3, -7, 100)</div></div>
+      <div class="vocab-card"><div class="term">String</div><div class="def">Text data (e.g. <code>"hello"</code>, <code>"42"</code>)</div></div>
+      <div class="vocab-card"><div class="term">Boolean</div><div class="def">A value that is either <code>True</code> or <code>False</code></div></div>
+      <div class="vocab-card"><div class="term"><code>str()</code></div><div class="def">Converts a number to text so you can display it</div></div>
+      <div class="vocab-card"><div class="term"><code>int()</code></div><div class="def">Converts text to a number so you can do maths with it</div></div>
+    </div>
+  </div>
+
+  <!-- Thnk -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — What's in the Box?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Imagine a teacher holds up a cardboard box labelled <strong>"score"</strong> and puts some pieces of paper inside.</p>
+      <div class="quote"><em>"At the start of a game, the box is empty — score is zero. When you earn a point, we add 1 to the box. When you display the score, we look inside. The box is always labelled 'score' — but what's INSIDE changes."</em></div>
+      <p>This is exactly what a <strong>variable</strong> is. A named box whose contents can change.</p>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Variables and Data Types</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Creating a Variable</h3>
+      <p>In Python, you create a variable by giving it a name and a value:</p>
+      <pre><code class="language-python">score = 0             # An integer variable
+player_name = "Alex"  # A string variable
+game_on = True        # A boolean variable</code></pre>
+      <p>The <code>=</code> sign means "store this value in this variable." It's not asking "are they equal?" — it's saying "put this inside the box."</p>
+
+      <h3>Using and Updating a Variable</h3>
+      <pre><code class="language-python">score = 0           # Start score at 0
+score = score + 1   # Add 1 to score
+score = score + 1   # Add 1 again
+                    # score is now 2</code></pre>
+      <p>Read <code>score = score + 1</code> as: "The new value of score is the old value of score, plus one."</p>
+
+      <h3>The Three Main Data Types</h3>
+      <table class="ui celled striped table">
+        <thead><tr><th>Type</th><th>Examples</th><th>When to use</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Integer</strong> (whole number)</td><td><code>0</code>, <code>42</code>, <code>-5</code></td><td>Scores, counts, sensor readings</td></tr>
+          <tr><td><strong>String</strong> (text)</td><td><code>"hello"</code>, <code>"yes"</code></td><td>Messages, names, labels</td></tr>
+          <tr><td><strong>Boolean</strong> (true/false)</td><td><code>True</code>, <code>False</code></td><td>Flags, on/off states</td></tr>
+        </tbody>
+      </table>
+      <div class="warn">⚠️ You can't do maths with strings! <code>"5" + "3"</code> gives you <code>"53"</code>, not <code>8</code>. Always use integers for calculations.</div>
+
+      <h3>Converting Between Types</h3>
+      <pre><code class="language-python">temp = temperature()      # temperature() gives an integer
+display.scroll(str(temp)) # str() converts it to text for display</code></pre>
+      <table class="ui celled table">
+        <thead><tr><th>Function</th><th>What it does</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>str(42)</code></td><td>Integer → String</td><td><code>"42"</code></td></tr>
+          <tr><td><code>int("42")</code></td><td>String → Integer</td><td><code>42</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Where Variables Fit in IPO</h3>
+      <p>Variables are the <strong>memory</strong> of your program. They store what happened in the past so the program can make decisions now.</p>
+      <div class="ipo-row">
+        <div class="ipo-box ipo-in"><span class="ipo-lbl">INPUT</span><span class="ipo-val">Button A pressed</span></div>
+        <div class="ipo-box ipo-proc"><span class="ipo-lbl">PROCESSING</span><span class="ipo-val">score = score + 1 (update the variable)</span></div>
+        <div class="ipo-box ipo-out"><span class="ipo-lbl">OUTPUT</span><span class="ipo-val">display(score) — read the variable</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p><strong>Goal:</strong> Build a score counter. Pressing A adds a point. Pressing B shows the score. Pressing A+B together resets the score.</p>
+      <pre><code class="language-python">from microbit import *
+
+score = 0
+
+while True:
+    if button_a.is_pressed():
+        score = score + 1
+        display.show(Image.YES)
+        sleep(300)
+        display.clear()
+
+    elif button_b.is_pressed():
+        display.scroll("Score: " + str(score))
+
+    elif button_a.is_pressed() and button_b.is_pressed():
+        score = 0
+        display.scroll("Reset!")</code></pre>
+
+      <h3>Key things to notice</h3>
+      <ul>
+        <li><code>score = 0</code> — the variable starts at zero</li>
+        <li><code>score = score + 1</code> — updates the variable</li>
+        <li><code>"Score: " + str(score)</code> — joins text and a number (must convert number to string first!)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Variables in Action</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <div class="task">
+        <div class="task-title">Task 1: Temperature Display (everyone)</div>
+        <p>Write a program that reads the temperature and displays it every 3 seconds.</p>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    temp = temperature()
+    display.scroll("Temp: " + str(temp) + "C")
+    sleep(3000)</code></pre>
+        <p><strong>Questions:</strong></p>
+        <ul>
+          <li>What data type is <code>temp</code>?</li>
+          <li>What does <code>str(temp)</code> do and why is it needed?</li>
+          <li>What is the <strong>input</strong>? What is the <strong>output</strong>?</li>
+        </ul>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Button Press Counter</div>
+        <p>Write a program that:</p>
+        <ul>
+          <li>Starts <code>count</code> at 0</li>
+          <li>Adds 1 to <code>count</code> every time Button A is pressed</li>
+          <li>Shows the count on screen after each press</li>
+        </ul>
+        <p>Use <code>display.show(str(count))</code> to display the value.</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Hot or Cold?</div>
+        <p>Combine variables and selection:</p>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    temp = temperature()
+
+    if temp &gt; 28:
+        display.scroll("Hot! " + str(temp) + "C")
+    elif temp &gt; 20:
+        display.scroll("Warm " + str(temp) + "C")
+    else:
+        display.scroll("Cold " + str(temp) + "C")
+
+    sleep(3000)</code></pre>
+        <p><strong>Question:</strong> Why do we store <code>temperature()</code> in a variable instead of calling it twice?</p>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Average Temperature</strong><br><br>
+        Can you read the temperature 5 times and work out the average?
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+
+total = 0
+for i in range(5):
+    total = total + temperature()
+    sleep(1000)
+
+average = total // 5    # // means integer division (no decimals)
+display.scroll("Avg: " + str(average))</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 5</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 5 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Explain what a variable is. Use the "labelled box" idea. What are the three data types?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Which tasks did you complete? For Task 1, what type of data is temp? Why do you need str()?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">What else would you like to store in a variable? Could you track something in real life with a micro:bit and a variable?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li>A <strong>variable</strong> is a named storage space — like a labelled box</li>
+      <li>The three main data types are <strong>integer</strong>, <strong>string</strong>, and <strong>boolean</strong></li>
+      <li>You can <strong>update</strong> a variable: <code>score = score + 1</code></li>
+      <li>Use <code>str()</code> to convert a number to text for displaying</li>
+      <li>Variables store data between loops — they give your program <strong>memory</strong></li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll use the micro:bit's sensors as inputs to build more interactive programs! 🌡️</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-04.html" class="ui labeled icon button" style="background:#06A17A;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 4: Repeat Yourself
+    </a>
+    <a href="lesson-06.html" class="ui right labeled icon button" style="background:#5C0099;color:#fff;font-weight:800;">
+      Lesson 6: Sensing the World <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 5 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>

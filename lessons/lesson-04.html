@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4 — Repeat Yourself | Think Like a Computer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body>
+
+<div class="ui fixed top menu">
+  <div class="ui container">
+    <a href="../index.html" class="header item">🤖 Think Like a Computer</a>
+    <a href="../index.html" class="item">🏠 Home</a>
+    <div class="ui simple dropdown item">
+      Lessons <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="lesson-01.html"><span class="lesson-dot ld-1">1</span>What Is a Computer Thinking?</a>
+        <a class="item" href="lesson-02.html"><span class="lesson-dot ld-2">2</span>Hello, micro:bit!</a>
+        <a class="item" href="lesson-03.html"><span class="lesson-dot ld-3">3</span>Making Decisions</a>
+        <a class="item" href="lesson-04.html"><span class="lesson-dot ld-4">4</span>Repeat Yourself</a>
+        <a class="item" href="lesson-05.html"><span class="lesson-dot ld-5">5</span>Talking to the World</a>
+        <a class="item" href="lesson-06.html"><span class="lesson-dot ld-6">6</span>Sensing the World</a>
+        <a class="item" href="lesson-07.html"><span class="lesson-dot ld-7">7</span>Build a Mini-Game</a>
+        <a class="item" href="lesson-08.html"><span class="lesson-dot ld-8">8</span>Fixing What's Broken</a>
+        <a class="item" href="lesson-09.html"><span class="lesson-dot ld-9">9</span>Design Your Own</a>
+        <a class="item" href="lesson-10.html"><span class="lesson-dot ld-10">10</span>Show What You Know</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap" style="margin-top:60px;">
+  <div class="progress-steps">
+    <a href="lesson-01.html" class="ps ps1" title="What Is a Computer Thinking?">1</a>
+    <a href="lesson-02.html" class="ps ps2" title="Hello, micro:bit!">2</a>
+    <a href="lesson-03.html" class="ps ps3" title="Making Decisions">3</a>
+    <a href="lesson-04.html" class="ps ps4 cur" title="Repeat Yourself">4</a>
+    <a href="lesson-05.html" class="ps ps5" title="Talking to the World">5</a>
+    <a href="lesson-06.html" class="ps ps6" title="Sensing the World">6</a>
+    <a href="lesson-07.html" class="ps ps7" title="Build a Mini-Game">7</a>
+    <a href="lesson-08.html" class="ps ps8" title="Fixing What's Broken">8</a>
+    <a href="lesson-09.html" class="ps ps9" title="Design Your Own">9</a>
+    <a href="lesson-10.html" class="ps ps10" title="Show What You Know">10</a>
+  </div>
+</div>
+
+<div class="lesson-hero lh4">
+  <div class="ui container">
+    <div class="eyebrow">Lesson 4 of 10</div>
+    <h1>Repeat Yourself 🔄</h1>
+    <div class="lesson-meta">
+      <span class="badge">⏱ 40 minutes</span>
+      <span class="badge">🔍 Pattern Recognition</span>
+      <span class="badge">📊 Multi-structural</span>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" style="padding:2em 1em 1em;">
+
+  <div class="info">
+    <strong>📋 NSW Outcomes:</strong> TE4-DIG-01 · TE4-DIG-02 <em style="color:#666;"> · Contributing: TE4-PPM-01</em>
+  </div>
+
+  <div style="margin:1.5em 0;">
+    <h2 style="font-weight:900;color:#333;">Learning Intentions</h2>
+    <ol style="line-height:2.2;font-size:1.02em;">
+      <li>Explain what a <strong>loop</strong> is and why it saves time</li>
+      <li>Write a <code>for</code> loop that repeats a fixed number of times</li>
+      <li>Write a <code>while True</code> loop that repeats until a condition changes</li>
+      <li>Identify a pattern in real life that could be coded as a loop</li>
+    </ol>
+  </div>
+
+  <div style="background:#f0fff8;border-radius:14px;padding:1.3em 1.5em;border:2px solid #06D6A0;margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#027A5D;margin-top:0;">✅ Success Criteria</h2>
+    <ul class="success-list">
+      <li><span class="cb">☐</span>Write a <code>for</code> loop that makes the display count from 1 to 5</li>
+      <li><span class="cb">☐</span>Write a <code>while</code> loop that keeps flashing until a button is pressed</li>
+      <li><span class="cb">☐</span>Explain the difference between a <code>for</code> loop and a <code>while</code> loop</li>
+      <li><span class="cb">☐</span>Identify at least one real-world example of each type of loop</li>
+    </ul>
+  </div>
+
+  <div style="margin-bottom:1.5em;">
+    <h2 style="font-weight:900;color:#333;">📖 Key Vocabulary</h2>
+    <div class="vocab-grid">
+      <div class="vocab-card"><div class="term">Loop</div><div class="def">A block of code that repeats</div></div>
+      <div class="vocab-card"><div class="term"><code>for</code> loop</div><div class="def">A loop that repeats a set number of times</div></div>
+      <div class="vocab-card"><div class="term"><code>while</code> loop</div><div class="def">A loop that repeats as long as a condition is True</div></div>
+      <div class="vocab-card"><div class="term">Iteration</div><div class="def">One single run-through of a loop</div></div>
+      <div class="vocab-card"><div class="term"><code>range()</code></div><div class="def">A Python function that creates a sequence of numbers</div></div>
+      <div class="vocab-card"><div class="term"><code>break</code></div><div class="def">A command that exits a loop early</div></div>
+    </div>
+  </div>
+
+  <!-- HOOK -->
+  <div class="ls ls-hook">
+    <div class="ls-head"><span class="ls-icon">🎣</span><span>THINK — When Does Life Repeat?</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <p>Think about this: <em>"Name something you do every day that repeats — and how many times?"</em></p>
+      <p>Examples students often give:</p>
+      <ul>
+        <li>Breathing — forever, until… not great to think about</li>
+        <li>Checking your phone — maybe 100 times a day?</li>
+        <li>Heartbeat — about 70 times per minute</li>
+      </ul>
+      <div class="quote"><em>Two types of repetition exist. Some things repeat a FIXED number of times. Some things repeat FOREVER (or until something changes). Can you spot which is which in your examples?</em></div>
+    </div>
+  </div>
+
+  <!-- THEORY -->
+  <div class="ls ls-theory">
+    <div class="ls-head"><span class="ls-icon">📡</span><span>THEORY — Loops in Python</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <h3>Why loops?</h3>
+      <p>Without loops, if you wanted to show the numbers 1 to 10, you'd write 10 separate lines. That's tedious and creates lots of repeated code. A loop solves this.</p>
+
+      <h3>Type 1: The <code>for</code> loop — repeat a fixed number of times</h3>
+      <pre><code class="language-python">from microbit import *
+
+for i in range(5):
+    display.scroll(str(i))</code></pre>
+      <p>This counts 0, 1, 2, 3, 4 — five times through.</p>
+      <ul>
+        <li><code>for i in range(5):</code> — "For each number i in the range 0 to 4…"</li>
+        <li><code>display.scroll(str(i))</code> — "Display that number" (<code>str()</code> converts the number to text)</li>
+      </ul>
+      <div class="tip">💡 <code>range(5)</code> gives you 0, 1, 2, 3, 4 — it <strong>starts at 0</strong>, not 1. To count from 1 to 5, use <code>range(1, 6)</code>.</div>
+
+      <h3><code>range()</code> options</h3>
+      <table class="ui celled table">
+        <thead><tr><th>Code</th><th>What it counts</th></tr></thead>
+        <tbody>
+          <tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td></tr>
+          <tr><td><code>range(1, 6)</code></td><td>1, 2, 3, 4, 5</td></tr>
+          <tr><td><code>range(0, 10, 2)</code></td><td>0, 2, 4, 6, 8 (every 2nd number)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Type 2: The <code>while</code> loop — repeat until a condition changes</h3>
+      <p>You already know <code>while True</code> — it repeats forever. But you can also use a condition:</p>
+      <pre><code class="language-python">from microbit import *
+
+count = 0
+while count &lt; 3:
+    display.show(Image.HEART)
+    sleep(500)
+    display.clear()
+    sleep(500)
+    count = count + 1</code></pre>
+      <p>This flashes a heart 3 times, then stops.</p>
+      <ul>
+        <li><code>count = 0</code> — start at zero</li>
+        <li><code>while count &lt; 3:</code> — keep looping while count is less than 3</li>
+        <li><code>count = count + 1</code> — add 1 to count each time around</li>
+      </ul>
+
+      <h3><code>while True</code> with a <code>break</code></h3>
+      <p>Sometimes you want to loop forever BUT stop when something specific happens:</p>
+      <pre><code class="language-python">from microbit import *
+
+while True:
+    display.show(Image.HEART)
+    sleep(500)
+    display.clear()
+    sleep(500)
+    if button_a.is_pressed():
+        break  # Exit the loop when A is pressed
+
+display.scroll("Done!")</code></pre>
+    </div>
+  </div>
+
+  <!-- MODEL -->
+  <div class="ls ls-model">
+    <div class="ls-head"><span class="ls-icon">👀</span><span>MODEL — Teacher Codes Live</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <p><strong>Goal:</strong> Build a simple countdown timer that counts down from 5 to 0 then shows a HAPPY face.</p>
+      <pre><code class="language-python">from microbit import *
+
+display.scroll("GO!")
+
+for i in range(5, 0, -1):    # Count from 5 down to 1
+    display.show(str(i))
+    sleep(1000)               # Wait 1 second each number
+
+display.show(Image.HAPPY)
+display.scroll("Time's up!")</code></pre>
+
+      <h3>IPO Breakdown</h3>
+      <div class="ipo-row">
+        <div class="ipo-box ipo-in"><span class="ipo-lbl">INPUT</span><span class="ipo-val">The range of numbers (5 down to 1)</span></div>
+        <div class="ipo-box ipo-proc"><span class="ipo-lbl">PROCESSING</span><span class="ipo-val">The for loop counts down, sleep creates the timing</span></div>
+        <div class="ipo-box ipo-out"><span class="ipo-lbl">OUTPUT</span><span class="ipo-val">Numbers 5–1 on display, then happy face and message</span></div>
+      </div>
+
+      <h3>Watch for:</h3>
+      <ul>
+        <li><code>range(5, 0, -1)</code> — start at 5, stop before 0, step of -1 (going backwards)</li>
+        <li><code>str(i)</code> — converts the number <code>i</code> to text so <code>display.show()</code> can use it</li>
+        <li>The <code>sleep(1000)</code> — this creates the 1-second pause between numbers</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div class="ls ls-practice">
+    <div class="ls-head"><span class="ls-icon">⌨️</span><span>PRACTICE — Your Turn With Loops</span><span class="ls-time">10 minutes</span></div>
+    <div class="ls-body">
+      <div class="task">
+        <div class="task-title">Task 1: Count Up (everyone)</div>
+        <p>Write a program that counts from 1 to 5 on the display, with a 0.5 second pause between each number.</p>
+        <pre><code class="language-python">from microbit import *
+
+for i in range(1, 6):
+    display.show(str(i))
+    sleep(500)
+
+display.scroll("Done!")</code></pre>
+        <p>Test it in the simulator.</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 2: Heartbeat</div>
+        <p>Write a program that flashes a heart on and off exactly 5 times, then shows the number "5".</p>
+        <p>Hint: Use a <code>for</code> loop. Inside the loop, show the heart, sleep, clear, sleep.</p>
+      </div>
+
+      <div class="task">
+        <div class="task-title">Task 3: Keep Flashing Until A</div>
+        <p>Write a program that flashes an image repeatedly until Button A is pressed.</p>
+        <pre><code class="language-python">from microbit import *
+
+while True:
+    display.show(Image.HEART)
+    sleep(400)
+    display.clear()
+    sleep(400)
+    if button_a.is_pressed():
+        break
+
+display.scroll("Stopped!")</code></pre>
+        <p><strong>Question to answer in your log:</strong> What is the <strong>input</strong>, <strong>processing</strong>, and <strong>output</strong> in Task 3?</p>
+      </div>
+
+      <div class="ext">
+        <strong>🚀 Extension: Step Counter Simulation</strong>
+        <pre style="margin-top:0.7em;"><code class="language-python">from microbit import *
+
+steps = 0
+
+while True:
+    if accelerometer.was_gesture("shake"):
+        steps = steps + 1
+        display.scroll(str(steps))</code></pre>
+        This counts "steps" (actually shakes). Try it in the simulator by clicking the shake button. What happens to <code>steps</code> each time you shake?
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS LOG -->
+  <div class="ls ls-log">
+    <div class="ls-head"><span class="ls-icon">📓</span><span>PROGRESS LOG — Lesson 4</span><span class="ls-time">5 minutes</span></div>
+    <div class="ls-body">
+      <div class="log-card">
+        <strong style="font-size:1.05em;color:#006B8A;">Lesson 4 Log — [Today's Date]</strong>
+        <div class="log-prompt">
+          <span class="lp-label">I learned…</span>
+          <span class="lp-hint">Explain the difference between a for loop and a while loop. When would you use each one?</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I tried…</span>
+          <span class="lp-hint">Which tasks did you finish? Write the IPO for Task 3.</span>
+        </div>
+        <div class="log-prompt">
+          <span class="lp-label">I wonder…</span>
+          <span class="lp-hint">What could you build with a loop and a sensor? What would you want to count or repeat?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🏁 Lesson Summary</h2>
+    <ul class="sum-list">
+      <li>A <strong>loop</strong> repeats code without you writing it over and over</li>
+      <li>A <strong><code>for</code> loop</strong> repeats a fixed number of times using <code>range()</code></li>
+      <li>A <strong><code>while</code> loop</strong> repeats as long as a condition is True</li>
+      <li><code>break</code> exits a loop early</li>
+      <li><code>range()</code> can count up, down, or in steps</li>
+    </ul>
+    <p class="next-teaser">Next lesson, you'll learn how to store and use data using <strong>variables</strong>! 📦</p>
+  </div>
+
+  <div class="lesson-nav">
+    <a href="lesson-03.html" class="ui labeled icon button" style="background:#E07000;color:#fff;font-weight:800;">
+      <i class="left arrow icon"></i> Lesson 3: Making Decisions
+    </a>
+    <a href="lesson-05.html" class="ui right labeled icon button" style="background:#C42B4B;color:#fff;font-weight:800;">
+      Lesson 5: Talking to the World <i class="right arrow icon"></i>
+    </a>
+  </div>
+
+</div>
+
+<div class="site-footer">
+  <strong>Think Like a Computer</strong> — Micro:bit &amp; Computational Thinking<br>
+  Lesson 4 of 10 | NSW Technology 7–8 (2023) | TE4-DIG-01, TE4-DIG-02
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="../assets/js/course.js"></script>
+</body>
+</html>
